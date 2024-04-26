@@ -18,7 +18,7 @@ export function Hero() {
                 <section className="py-10 sm:py-16 lg:py-24">
                     <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                         <div className="max-w-2xl mx-auto text-center mt-20">
-                            <h2 className="text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl lg:text-5xl">Savourez nos chocolats écologiques.</h2>
+                            <h2 className="text-3xl font-bold leading-tight text-amber-900 dark:text-white  sm:text-4xl lg:text-5xl">Savourez nos chocolats écologiques.</h2>
                             <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-200">Entrez dans un monde de douceur et de durabilité avec Edenia, le chocolat écologique qui allie plaisir gustatif et engagement environnemental.</p>
                         </div>
 
@@ -96,7 +96,7 @@ export function Hero() {
 
                                     </div>
                                     <p className="mt-5 text-2xl font-semibold">
-                                        <a href="#" title="" className="text-black dark:text-white"> Plantation de cacao bien entretenue </a>
+                                        <a href="#" title="" className="text-amber-700 dark:text-white"> Plantation de cacao bien entretenue </a>
                                     </p>
                                     <p className="mt-4 text-base text-gray-600 dark:text-gray-200">Dans nos plantations de cacao écologique, chaque geste est empreint de soin et de respect pour la nature. Les cultivateurs s'engagent à cultiver le cacao de manière durable, en utilisant des méthodes agroforestières qui préservent la biodiversité et régénèrent les sols.</p>
                                     <a href="#" title="" className="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
@@ -118,7 +118,7 @@ export function Hero() {
 
                                     </div>
                                     <p className="mt-5 text-2xl font-semibold">
-                                        <a href="#" title="" className="text-black dark:text-white"> Production suivant la norme </a>
+                                        <a href="#" title="" className="text-amber-700 dark:text-white"> Production suivant la norme </a>
                                     </p>
                                     <p className="mt-4 text-base text-gray-600 dark:text-gray-200">La production de chocolat est un processus méticuleux. Chaque étape est exécutée avec une précision artisanale, garantissant un produit exceptionnel. Les normes de qualité sont maintenues pour la pureté des ingrédients et la sécurité alimentaire.</p>
                                     <a href="#" title="" className="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
@@ -140,7 +140,7 @@ export function Hero() {
 
                                     </div>
                                     <p className="mt-5 text-2xl font-semibold">
-                                        <a href="#" title="" className="text-black dark:text-white"> Packaging biodégradable </a>
+                                        <a href="#" title="" className="text-amber-700 dark:text-white"> Packaging biodégradable </a>
                                     </p>
                                     <p className="mt-4 text-base text-gray-600 dark:text-gray-200">Nous privilégions l'utilisation de packaging dégradable,contribuant à réduire notre empreinte environnementale.Ce choix reflète notre engagement envers la préservation de l'environnement tout en offrant à nos clients une expérience écologique.
                                     </p>
@@ -174,7 +174,7 @@ export function Hero() {
                 <section className="py-5 sm:py-5 lg:py-5">
                     <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                         <div className="max-w-2xl mx-auto text-center mt-20">
-                            <h2 className="text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl lg:text-5xl">Soutien aux communautés locales</h2>
+                            <h2 className="text-3xl font-bold leading-tight text-amber-900 dark:text-white sm:text-4xl lg:text-5xl">Soutien aux communautés locales</h2>
                             <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-200">"Soutenir les communautés locales est bien plus qu'une action ponctuelle ; c'est un engagement continu envers le développement durable, la résilience et l'autonomie des populations dans la construction d'un avenir inclusif et prospère."</p>
                         </div>
                     </div>
