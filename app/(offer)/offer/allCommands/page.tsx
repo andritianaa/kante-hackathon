@@ -3,8 +3,11 @@ import type { PageParams } from "@/types/next";
 import { OneCommand } from "./OneCommand";
 
 export default  function RoutePage(props: PageParams<{  }>) {
-      const [commands,] = JSON.parse(localStorage.getItem("tableauCommandes") || "[]")
+      const commands = JSON.parse(localStorage.getItem("tableauCommandes") || "[]")
       const userId = localStorage.getItem("userId") || ""
+
+      console.log("commands ====> ", commands);
+      
   return (
     <>
     {commands.map((command)=>{

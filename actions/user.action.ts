@@ -4,9 +4,9 @@ import fs from "fs";
 import { currentUser } from "@/lib/current-user";
 import { prisma } from "@/prisma";
 import { ActionError } from "../lib/safe-action";
-const filePathBirth = "@/prisma/birth.json";
-const filePathGenre = "@/prisma/genre.json";
-const filePathBond = "@/prisma/bond.json";
+const filePathBirth = "./actions/birth.json";
+const filePathGenre = "./actions/genre.json";
+const filePathBond = "./actions/bond.json";
 
 interface UserObject {
     userId: string;
@@ -151,4 +151,62 @@ export const addVoucher = async (amount: number, userId: string) => {
             );
         }
     });
+}
+
+export const getVoucher = async (userId: string): Promise<number> => {
+    const data = fs.readFileSync(filePathBond, "utf8");
+    try {
+        const array: UserObjectInt[] = JSON.parse(data);
+        const user = array.find((obj) => obj.userId === userId);
+        if (user) {
+            return user.value;
+        } else {
+            return 0
+        }
+    } catch (error) { }
+    throw new ActionError("L'utilisateur n'existe pas");
+};
+
+export const substract = async (amount: number) => {
+    const current = await currentUser()
+    if (current) {
+        fs.readFile(filePathBond, "utf8", (err, data) => {
+            if (err) {
+                console.error("Error reading file:", err);
+                return;
+            }
+            try {
+                const array: UserObjectInt[] = JSON.parse(data);
+                let user = array.find(user => user.userId === current.id)
+                if (user) {
+                    user.value -= amount
+                    if (user.value < 0) {
+                        user.value = 0
+                    }
+                } else {
+                    array.push({
+                        userId: current.id,
+                        value: amount,
+                    });
+                }
+                fs.writeFile(
+                    filePathBond,
+                    JSON.stringify(array, null, 2),
+                    "utf8",
+                    (err) => {
+                        if (err) {
+                            throw new ActionError(
+                                "Erreur lors de la modification du genre"
+                            );
+                        }
+                        console.log("Object has been added successfully!");
+                    }
+                );
+            } catch (error) {
+                throw new ActionError(
+                    "Erreur lors de la modification du genre"
+                );
+            }
+        });
+    }
 }

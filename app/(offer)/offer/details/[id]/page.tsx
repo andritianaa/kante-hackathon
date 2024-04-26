@@ -1,22 +1,17 @@
+"use client";
 import { PageParams } from "@/types/next";
 import { Layout } from "@/components/layout";
-import { HandCoins, Info, MapPinned } from "lucide-react";
+import { HandCoins, Info, MapPinned, MinusIcon, PlusIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  SelectValue,
-  SelectTrigger,
-  SelectItem,
-  SelectContent,
-  Select,
-} from "@/components/ui/select";
 import { ChocolateCard } from "@/components/offer/ChocolateCard";
 import { chocolates } from "@/lib/chocolates";
 import { getOneproduct } from "../../../../../lib/product";
+import { Chocolate } from "../../../../../types/chocolate";
+import { addToCard, removeToCard } from "../../../../../actions/cart.action";
 
-export default async function RoutePage(props: PageParams<{id:string}>) {
-  const chocolat = getOneproduct(props.params.id);
-  console.log(chocolat);
-  
+export default function RoutePage(props: PageParams<{ id: string }>) {
+  const chocolat: Chocolate = getOneproduct(props.params.id);
+
   return (
     <Layout className="mt-20 max-w-3xl">
       <div className="flex pb-4 gap-4 flex-col w-full justify-center items-center">
@@ -56,21 +51,32 @@ export default async function RoutePage(props: PageParams<{id:string}>) {
             </div>
           </div>
           <div className="flex items-start gap-4 mt-4">
-            <div className="grid gap-2">
-              <Select defaultValue="1">
-                <SelectTrigger className="w-24">
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="1">1</SelectItem>
-                  <SelectItem value="2">2</SelectItem>
-                  <SelectItem value="3">3</SelectItem>
-                  <SelectItem value="4">4</SelectItem>
-                  <SelectItem value="5">5</SelectItem>
-                </SelectContent>
-              </Select>
+            <div className="flex items-center gap-2">
+              <Button
+                className="rounded-l-md"
+                variant="outline"
+                onClick={() => removeToCard(chocolat.chocolat_id)}
+              >
+                <MinusIcon className="w-4 h-4" />
+              </Button>
+              <Button className="rounded-l-md" variant="outline">
+                {chocolat.occurences}
+              </Button>
+
+              <Button
+                className="rounded-r-md"
+                variant="outline"
+                onClick={() => addToCard(chocolat.chocolat_id)}
+              >
+                <PlusIcon className="w-4 h-4" />
+              </Button>
             </div>
-            <Button className="w-full">Add to Cart</Button>
+            <Button
+              className="w-full"
+              onClick={() => addToCard(chocolat.chocolat_id)}
+            >
+              Add to Cart
+            </Button>
           </div>
           <div className="flex flex-col mt-4">
             <p className="">{chocolat.description}</p>

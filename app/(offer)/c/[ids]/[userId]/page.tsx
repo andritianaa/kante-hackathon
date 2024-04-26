@@ -1,6 +1,7 @@
 "use client";
 import type { PageParams } from "@/types/next";
-import { Link } from "lucide-react";
+import { Link as LinkIcon } from "lucide-react";
+import Link  from "next/link";
 
 import { chocolates } from "@/lib/chocolates";
 import { useEffect, useState } from "react";
@@ -8,7 +9,7 @@ import { Chocolate } from "@/types/chocolate";
 import { CartItem } from "@/components/offer/CartItem";
 import { Layout } from "@/components/layout";
 import { Button } from "../../../../../components/ui/button";
-import { addVoucher } from "../../../../../actions/user.action";
+import { addVoucher, substract } from "../../../../../actions/user.action";
 import { RecipeItem } from "../../../../../components/offer/RecipeItem";
 
 export default function RoutePage(props: PageParams<{ ids: string, userId: string }>) {
@@ -108,12 +109,11 @@ export default function RoutePage(props: PageParams<{ ids: string, userId: strin
   return (
     <Layout>
       <div className="mt-20">
-        <div className="p-3 h-full max-h-[500px] overflow-scroll">
+        <div className="p-3 h-full overflow-scroll">
         <div className="flex justify-between">
             <h5 className="text-lg font-bold leading-none text-gray-900 dark:text-white">
               Suggestion d'un ami
             </h5>
-            
           </div>
           {chocolatesWithOccurences.map((chocolate) => (
             
@@ -138,9 +138,12 @@ export default function RoutePage(props: PageParams<{ ids: string, userId: strin
             <p className="">
               Somme TTC : <span className="font-semibold">{sommeTTC} MGA</span>
             </p>
+            <Link href="/offer">
             <Button onClick={()=> {
+                substract(sommeTTC)
               handdleCommandWithVoucher()
             }}>Commander</Button>
+            </Link>
           </div>
           
         </div>

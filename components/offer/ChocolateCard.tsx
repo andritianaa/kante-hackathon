@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Chocolate } from "../../types/chocolate";
@@ -14,9 +14,7 @@ export function ChocolateCard(chocolate: Chocolate) {
           alt="Chocolate Card"
           className="w-full h-[300px] object-cover"
           height="300"
-          src={
-            "https://thumbs.dreamstime.com/b/chocolat-avec-la-poudre-de-cacao-125953683.jpg"
-          }
+          src={chocolate.image}
           style={{
             // aspectRatio: "500/300",
             objectFit: "cover",
@@ -43,15 +41,19 @@ export function ChocolateCard(chocolate: Chocolate) {
           <Info size={28} />
           <div className="text-lg">{chocolate.categorie}</div>
         </div>
-        <div className="flex items-center gap-3">
-        <Link href={`/offer/details/${encodeURIComponent(String(chocolate.chocolat_id))}`}>
-
+        <div className="flex items-center w-full gap-3">
+          <Link
+            href={`/offer/details/${encodeURIComponent(
+              String(chocolate.chocolat_id)
+            )}`}
+            className="w-1/2"
+          >
             <Button variant={"outline"} className="w-full">
               Détails
             </Button>
           </Link>
           <Button
-            className="w-full"
+            className="w-1/2"
             onClick={() => addToCard(chocolate.chocolat_id)}
           >
             Ajouter à la carte
