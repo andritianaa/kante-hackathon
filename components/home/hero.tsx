@@ -1,32 +1,162 @@
 import React from "react";
 import { Button } from "../ui/button";
+import { Layout } from "../layout";
 
 
 export function Hero() {
   return (
-    <div className=" h-[70vh] mt-20 relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/squared-bg-element.svg')] dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:size-full before:-z-[1] before:transform before:-translate-x-1/2">
-      <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
-        <div className="flex justify-center">
-          <a className="inline-flex items-center gap-x-2 bg-white border border-gray-200 text-xs text-gray-600 p-2 px-3 rounded-full transition hover:border-gray-300 dark:bg-neutral-800 dark:border-neutral-700 dark:hover:border-neutral-600 dark:text-neutral-400" href="#">
-            We are also on Android
-            <span className="flex items-center gap-x-1">
-              <span className="border-s border-gray-200 text-blue-600 ps-2 dark:text-blue-500 dark:border-neutral-700">Download</span>
-              <svg className="flex-shrink-0 size-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-            </span>
-          </a>
+    <>
+      <Layout>
+        <div className=" h-[35vh] mt-40 relative overflow-hidden before:absolute before:top-0 before:start-1/2  dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:size-full before:-z-[1] before:transform before:-translate-x-1/2">
+          <div className=" justify-between items-center mt-3 ">
+            <h1 className="text-center text-3xl md:text-4xl font-bold mb-3">Titre</h1>
+            <p className="text-center">Entrez dans un monde de douceur et de durabilité avec Edenia, <br />  <span className="mt-2">le chocolat écologique qui allie plaisir gustatif et engagement environnemental.</span></p>
+          </div>
+
         </div>
-        <div className="mt-5 max-w-xl text-center mx-auto">
-          <h1 className="block font-bold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-neutral-200">
-            Welcome to Unknown
-          </h1>
+
+
+        <div className="max-w-[85rem] mb-20 px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
+            <div className="lg:col-span-3">
+              <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl dark:text-white">Edenia chocolaterie</h1>
+              <p className="mt-10">
+                Edenia, incarne trois principes fondamentaux : la durabilité, la certification biologique et écologique, ainsi qu'un engagement profond envers nos communautés locales.La durabilité est au cœur de tout ce que nous faisons chez Edenia.
+              </p>
+              <div className="mt-5 lg:mt-8 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
+                <div className="w-full sm:w-auto">
+                  <label className="sr-only">Search</label>
+                  <input type="text" id="hero-input" name="hero-input" className="py-3 px-4 block w-full xl:min-w-72 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Enter work email" />
+                </div>
+                <a className="w-full sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
+                  Request
+                </a>
+              </div>
+
+            </div>
+
+            <div className="lg:col-span-4 mt-10 lg:mt-0">
+              <img className="w-full rounded-xl" src="https://images.unsplash.com/photo-1665686376173-ada7a0031a85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&h=700&q=80" alt="Image Description" />
+            </div>
+
+          </div>
+
         </div>
-        <div className="mt-5 max-w-3xl text-center mx-auto">
-          <p className="text-lg text-gray-600 dark:text-neutral-400">This product was developed in 24 hours during the Kante hackathon. </p>
-        </div>
-        <div className="mt-8 gap-3 flex justify-center">
-          <Button size="xl" className="rounded-full">Get started</Button>
-        </div>
-      </div>
-    </div>
+        {/* <div className="h-[75vh] mt-28">
+          <h1 className="text-center text-3xl md:text-4xl font-bold mb-3">Pourquoi choisir nos produits?</h1>
+          <div className="flex justify-between items-center mt-28">
+            <div className="w-1/3">
+              <img className="w-full h-" src="/Pourquoi-manger-du-chocolat-n-est-pas-tres-ecolo.jpg" alt="" />
+              <p className="truncate">Dans nos plantations de cacao écologique, chaque geste est empreint de soin et de respect pour la nature. Les cultivateurs s'engagent à cultiver le cacao de manière durable, en utilisant des méthodes agroforestières qui préservent la biodiversité et régénèrent les sols. Chaque cabosse récoltée est le fruit d'un travail minutieux et passionné, offrant ainsi une expérience chocolatière authentique et pleine de saveur, tout en préservant l'équilibre fragile de notre environnement.</p>
+            </div>
+            <div className="w-1/3">
+              <img className="w-full h-" src="/P1010232_2.jpg" alt="" />
+              <p className="truncate">lorem</p>
+            </div>
+            <div className="w-1/3">
+              <img className="w-full h-" src="/emaballage-papier-de-cacao-le-chocolat-de-tiffanie.jpg" alt="" />
+              <p className="truncate">lorem</p>
+            </div>
+          </div>
+        </div> */}
+
+        <section className="py-10 bg-gray-50 sm:py-16 lg:py-24">
+          <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+            <div className="flex items-end justify-between">
+              <div className="flex-1 text-center lg:text-left">
+                <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Pourquoi nos produits?</h2>
+                <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600 lg:mx-0">Nos produits se distinguent par Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quidem expedita officia ipsa unde accusantium</p>
+              </div>
+
+
+            </div>
+
+            <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 lg:mt-16 lg:grid-cols-3 lg:max-w-full">
+              <div className="overflow-hidden bg-white rounded shadow">
+                <div className="p-5">
+                  <div className="relative">
+                    <a href="#" title="" className="block aspect-w-4 aspect-h-3">
+                      <img className="object-cover w-full h-full" src="/Pourquoi-manger-du-chocolat-n-est-pas-tres-ecolo.jpg" alt="" />
+                    </a>
+
+
+                  </div>
+                  <p className="mt-5 text-2xl font-semibold">
+                    <a href="#" title="" className="text-black"> Plantation de cacao bien entretenue </a>
+                  </p>
+                  <p className="mt-4 text-base text-gray-600">Dans nos plantations de cacao écologique, chaque geste est empreint de soin et de respect pour la nature. Les cultivateurs s'engagent à cultiver le cacao de manière durable, en utilisant des méthodes agroforestières qui préservent la biodiversité et régénèrent les sols.</p>
+                  <a href="#" title="" className="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
+                    Continue Reading
+                    <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div className="overflow-hidden bg-white rounded shadow">
+                <div className="p-5">
+                  <div className="relative">
+                    <a href="#" title="" className="block aspect-w-4 aspect-h-3">
+                      <img className="object-cover w-full h-full" src="/P1010232_2.jpg" alt="" />
+                    </a>
+
+
+                  </div>
+                  <p className="mt-5 text-2xl font-semibold">
+                    <a href="#" title="" className="text-black"> Production suivant la norme </a>
+                  </p>
+                  <p className="mt-4 text-base text-gray-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                  <a href="#" title="" className="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
+                    Continue Reading
+                    <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div className="overflow-hidden bg-white rounded shadow">
+                <div className="p-5">
+                  <div className="relative">
+                    <a href="#" title="" className="block aspect-w-4 aspect-h-3">
+                      <img className="object-cover w-full h-full" src="/emaballage-papier-de-cacao-le-chocolat-de-tiffanie.jpg" alt="" />
+                    </a>
+
+
+                  </div>
+                  <p className="mt-5 text-2xl font-semibold">
+                    <a href="#" title="" className="text-black"> 5 Productivity tips to write faster at morning. </a>
+                  </p>
+                  <p className="mt-4 text-base text-gray-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                  <a href="#" title="" className="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
+                    Continue Reading
+                    <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center mt-8 space-x-3 lg:hidden">
+              <button type="button" className="flex items-center justify-center text-gray-400 transition-all duration-200 bg-transparent border border-gray-300 rounded w-9 h-9 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              <button type="button" className="flex items-center justify-center text-gray-400 transition-all duration-200 bg-transparent border border-gray-300 rounded w-9 h-9 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </Layout>
+    </>
+
   );
 }
