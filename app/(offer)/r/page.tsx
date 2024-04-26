@@ -1,76 +1,21 @@
 "use client";
+import { Link } from "lucide-react";
+import type { PageParams } from "@/types/next";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Link as LinkIcon, ShoppingCart } from "lucide-react";
-import { CartItem } from "../offer/CartItem";
-import { chocolates } from "../../lib/chocolates";
+import { ShoppingCart } from "lucide-react";
+import { chocolates } from "@/lib/chocolates";
 import { useEffect, useState } from "react";
-import { Chocolate } from "../../types/chocolate";
-import { Button } from "../ui/button";
-import Link from "next/link";
+import { Chocolate } from "@/types/chocolate";
+import { CartItem } from "../../../components/offer/CartItem";
+import { Layout } from "../../../components/layout";
 
-export const CartDropDown = () => {
+export default function RoutePage(props: PageParams<{  }>) {
+
   const [forceRender, setForceRender] = useState(false);
-
-  function calculRemise(): number {
-    const dateAnniversaire = localStorage.getItem("birth") || "2001-01-01";
-    // Conversion de la date d'anniversaire en objet Date
-    const anniversaire: Date = new Date(dateAnniversaire);
-
-    // Obtention de la date actuelle
-    const dateActuelle: Date = new Date();
-
-    // Calcul de l'année actuelle
-    const anneeActuelle: number = dateActuelle.getFullYear();
-
-    // Calcul de l'année de l'anniversaire
-    const anneeAnniversaire: number = anniversaire.getFullYear();
-
-    // Calcul de la différence en millisecondes entre la date actuelle et l'anniversaire
-    const difference: number = anniversaire.getTime() - dateActuelle.getTime();
-
-    // Conversion de la différence en jours
-    const differenceEnJours: number = difference / (1000 * 3600 * 24);
-
-    // Conversion de la différence en semaines
-    const differenceEnSemaines: number = differenceEnJours / 7;
-
-    // Conversion de la différence en mois
-    const differenceEnMois: number = differenceEnJours / 30;
-
-    // Retirer 365 jours si l'année n'est pas bissextile
-    const nombreDeJoursDansAnnee: number = ((anneeActuelle % 4 === 0 && anneeActuelle % 100 !== 0) || (anneeActuelle % 400 === 0)) ? 366 : 365;
-    const joursRetires: number = (anneeAnniversaire === anneeActuelle) ? 0 : nombreDeJoursDansAnnee;
-
-    // Si l'anniversaire est passé il y a moins de 2 semaines
-    if (differenceEnSemaines < 2) {
-        return 15; // 15% de remise
-    }
-    // Si l'anniversaire est passé il y a maximum 1 mois
-    else if (differenceEnMois <= 1) {
-        return 5; // 5% de remise
-    }
-    // Si l'anniversaire arrive dans maximum 1 mois
-    else if (differenceEnMois <= 1) {
-        return 7; // 7% de remise
-    }
-    // Si l'anniversaire arrive dans maximum 2 mois
-    else if (differenceEnMois <= 2) {
-        return 3; // 3% de remise
-    }
-    // Si aucune condition n'est remplie
-    else {
-        return 0; // Pas de remise
-    }
-}
-
-
-
-
-
   const [ids, setIds] = useState<number[]>(
     JSON.parse(localStorage.getItem("cart") || "[]")
   );
@@ -139,8 +84,6 @@ export const CartDropDown = () => {
       nouvelleRemise += 15;
     }
 
-    nouvelleRemise += calculRemise()
-
     setRemise(nouvelleRemise);
 
     const nouvelleSomme = chocolatesWithOccurences.reduce(
@@ -155,11 +98,10 @@ export const CartDropDown = () => {
     setSommeTTC(nouvelleSommeTTC);
   }, [chocolatesWithOccurences]);
 
+  
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText(
-        `http://localhost:3000/c/${ids.toString()}`
-      );
+      await navigator.clipboard.writeText(`http://localhost:3000/c/${ids.toString()}`);
     } catch (error) {
       console.error("Erreur lors de la copie dans le presse-papiers :", error);
       alert("Erreur lors de la copie dans le presse-papiers");
@@ -167,24 +109,14 @@ export const CartDropDown = () => {
   };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger>
-        <div className="relative">
-          <ShoppingCart />
-          {ids.length > 0 && (
-            <div className="absolute w-4 h-4 text-center -top-1.5 -right-1.5 bg-red-500 text-white rounded-full text-xs font-semibold">
-              {ids.length}
-            </div>
-          )}
-        </div>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
+    <Layout>
+      <div className="mt-20">
         <div className="p-3 h-full max-h-[500px] overflow-scroll">
-          <div className="flex justify-between">
+        <div className="flex justify-between">
             <h5 className="text-lg font-bold leading-none text-gray-900 dark:text-white">
               Mon panier
             </h5>
-            <LinkIcon className="cursor-pointer" onClick={copyToClipboard} />
+            <Link className="cursor-pointer" onClick={copyToClipboard}/>
           </div>
           {chocolatesWithOccurences.map((chocolate) => (
             <CartItem
@@ -210,12 +142,9 @@ export const CartDropDown = () => {
             <p className="">
               Somme TTC : <span className="font-semibold">{sommeTTC} MGA</span>
             </p>
-            <Link href="/offer/commande">
-              <Button>Valider commande</Button>
-            </Link>
           </div>
         </div>
-      </DropdownMenuContent>
-    </DropdownMenu>
+      </div>
+    </Layout>
   );
 };
