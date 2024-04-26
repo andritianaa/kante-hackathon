@@ -6,7 +6,7 @@ export type Chocolate = {
   categorie: String;
   origine: String;
   prix: string;
-  image: String;
+  image: string;
 };
 export interface Command {
   id: string;

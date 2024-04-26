@@ -12,11 +12,10 @@ import {
 import { ChocolateCard } from "@/components/offer/ChocolateCard";
 import { chocolates } from "@/lib/chocolates";
 import { getOneproduct } from "../../../../../lib/product";
+import { Chocolate } from "../../../../../types/chocolate";
 
-export default async function RoutePage(props: PageParams<{id:string}>) {
-  const chocolat = getOneproduct(props.params.id);
-  console.log(chocolat);
-  
+export default function RoutePage(props: PageParams<{id:string}>) {
+  const chocolat:Chocolate = getOneproduct(props.params.id);
   return (
     <Layout className="mt-20 max-w-3xl">
       <div className="flex pb-4 gap-4 flex-col w-full justify-center items-center">
