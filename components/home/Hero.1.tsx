@@ -142,7 +142,7 @@ export function Hero() {
                                     <p className="mt-5 text-2xl font-semibold">
                                         <a href="#" title="" className="text-black dark:text-white"> Packaging biodégradable </a>
                                     </p>
-                                    <p className="mt-4 text-base text-gray-600 dark:text-gray-200">Nous privilégions l'utilisation de packaging dégradable,contribuant  à réduire notre empreinte environnementale. Ce choix reflète notre engagement envers la durabilité et la préservation de l'environnement tout en offrant à nos clients une expérience respectueuse de la nature
+                                    <p className="mt-4 text-base text-gray-600 dark:text-gray-200">Nous privilégions l'utilisation de packaging dégradable,contribuant à réduire notre empreinte environnementale.Ce choix reflète notre engagement envers la préservation de l'environnement tout en offrant à nos clients une expérience écologique.
                                     </p>
                                     <a href="#" title="" className="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
                                         Continue Reading
@@ -154,7 +154,7 @@ export function Hero() {
                             </div>
                         </div>
 
-                        <div className="flex items-center justify-center mt-8 space-x-3 lg:hidden">
+                        {/* <div className="flex items-center justify-center mt-8 space-x-3 lg:hidden">
                             <button type="button" className="flex items-center justify-center text-gray-400 transition-all duration-200 bg-transparent border border-gray-300 rounded w-9 h-9 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -166,7 +166,7 @@ export function Hero() {
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                                 </svg>
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
 
