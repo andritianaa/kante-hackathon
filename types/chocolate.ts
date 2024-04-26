@@ -1,6 +1,6 @@
 export type Chocolate = {
   occurences?: number;
-  chocolat_id: Number;
+  chocolat_id: number;
   nom: String;
   description: String;
   categorie: String;

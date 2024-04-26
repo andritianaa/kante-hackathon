@@ -2,9 +2,6 @@
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ShoppingCart } from "lucide-react";
@@ -14,7 +11,27 @@ import { useEffect, useState } from "react";
 import { Chocolate } from "../../types/chocolate";
 
 export const CartDropDown = () => {
-  const ids = [1, 16, 16, 1,1];
+  const [forceRender, setForceRender] = useState(false);
+    // Récupérer les IDs à partir du localStorage et les stocker dans le state "ids"
+    const [ids, setIds] = useState<number[]>(JSON.parse(localStorage.getItem("cart") || "[]"));
+    // Mettre à jour les IDs dans le localStorage et le state lorsque le localStorage change
+
+    setInterval(() => {
+      setIds(JSON.parse(localStorage.getItem("cart") || "[]"))
+    },200)
+
+
+    useEffect(() => {
+      window.addEventListener('storage', ()=>{
+        console.log("reload");
+      });
+        const handleStorageChange = () => {
+            const newIds = JSON.parse(localStorage.getItem("cart") || "[]");
+            setIds(newIds);
+            setForceRender(prev => !prev);
+        };
+    }, []);
+
   // Compter le nombre d'occurrences de chaque ID
   const idCounts = ids.reduce((acc, id) => {
     acc[id] = (acc[id] || 0) + 1;

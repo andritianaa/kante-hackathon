@@ -2,25 +2,14 @@
 
 import { MinusIcon, PlusIcon, Trash2 } from "lucide-react";
 import { Button } from "../ui/button";
-import {
-  SelectValue,
-  SelectTrigger,
-  SelectItem,
-  SelectContent,
-  Select,
-} from "@/components/ui/select";
 import { useState } from "react";
 import { Chocolate } from "../../types/chocolate";
 import { Input } from "../ui/input";
+import { addToCard, removeAll, removeToCard } from "../../lib/cart";
 
 export const CartItem = (chocolate: Chocolate) => {
   const [quantity, setQuantity] = useState<number>(chocolate.occurences || 0);
-  const handleInc = () => {
-    setQuantity(quantity + 1);
-  };
-  const handleDec = () => {
-    if (quantity > 1) setQuantity(quantity - 1);
-  };
+
 
   if(chocolate.occurences) 
     return (
@@ -44,16 +33,16 @@ export const CartItem = (chocolate: Chocolate) => {
           </p>
         </div>
         <div className="flex items-center">
-          <Button className="rounded-l-md" variant="outline" onClick={handleDec}>
+          <Button className="rounded-l-md" variant="outline" onClick={()=> removeToCard(chocolate.chocolat_id)}>
             <MinusIcon className="w-4 h-4" />
           </Button>
   
           <Input type="number" value={chocolate.occurences} className="w-12" />
-          <Button className="rounded-r-md" variant="outline" onClick={handleInc}>
+          <Button className="rounded-r-md" variant="outline" onClick={()=> addToCard(chocolate.chocolat_id)}>
             <PlusIcon className="w-4 h-4" />
           </Button>
         </div>
-        <Trash2 color="red" />
+        <Trash2 color="red" onClick={()=> removeAll(chocolate.chocolat_id)}/>
       </div>
     );
 };
