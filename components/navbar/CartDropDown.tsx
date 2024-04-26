@@ -12,6 +12,63 @@ import { Chocolate } from "../../types/chocolate";
 
 export const CartDropDown = () => {
   const [forceRender, setForceRender] = useState(false);
+
+  function calculRemise(): number {
+    const dateAnniversaire = localStorage.getItem("birth") || "2001-01-01";
+    // Conversion de la date d'anniversaire en objet Date
+    const anniversaire: Date = new Date(dateAnniversaire);
+
+    // Obtention de la date actuelle
+    const dateActuelle: Date = new Date();
+
+    // Calcul de l'année actuelle
+    const anneeActuelle: number = dateActuelle.getFullYear();
+
+    // Calcul de l'année de l'anniversaire
+    const anneeAnniversaire: number = anniversaire.getFullYear();
+
+    // Calcul de la différence en millisecondes entre la date actuelle et l'anniversaire
+    const difference: number = anniversaire.getTime() - dateActuelle.getTime();
+
+    // Conversion de la différence en jours
+    const differenceEnJours: number = difference / (1000 * 3600 * 24);
+
+    // Conversion de la différence en semaines
+    const differenceEnSemaines: number = differenceEnJours / 7;
+
+    // Conversion de la différence en mois
+    const differenceEnMois: number = differenceEnJours / 30;
+
+    // Retirer 365 jours si l'année n'est pas bissextile
+    const nombreDeJoursDansAnnee: number = ((anneeActuelle % 4 === 0 && anneeActuelle % 100 !== 0) || (anneeActuelle % 400 === 0)) ? 366 : 365;
+    const joursRetires: number = (anneeAnniversaire === anneeActuelle) ? 0 : nombreDeJoursDansAnnee;
+
+    // Si l'anniversaire est passé il y a moins de 2 semaines
+    if (differenceEnSemaines < 2) {
+        return 15; // 15% de remise
+    }
+    // Si l'anniversaire est passé il y a maximum 1 mois
+    else if (differenceEnMois <= 1) {
+        return 5; // 5% de remise
+    }
+    // Si l'anniversaire arrive dans maximum 1 mois
+    else if (differenceEnMois <= 1) {
+        return 7; // 7% de remise
+    }
+    // Si l'anniversaire arrive dans maximum 2 mois
+    else if (differenceEnMois <= 2) {
+        return 3; // 3% de remise
+    }
+    // Si aucune condition n'est remplie
+    else {
+        return 0; // Pas de remise
+    }
+}
+
+
+
+
+
   const [ids, setIds] = useState<number[]>(
     JSON.parse(localStorage.getItem("cart") || "[]")
   );
@@ -79,6 +136,8 @@ export const CartDropDown = () => {
     if (groupes.g15 >= 3) {
       nouvelleRemise += 15;
     }
+
+    nouvelleRemise += calculRemise()
 
     setRemise(nouvelleRemise);
 
