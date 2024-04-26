@@ -75,7 +75,7 @@ export const Footer = () => {
             <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                 <div className="text-center xl:flex xl:items-center xl:justify-between xl:text-left">
                     <div className="xl:flex xl:items-center xl:justify-start">
-                        <img className="w-16 mx-auto h-16" src="/309518993_493093029495190_642745300732547415_n.jpg" alt="" />
+                        <img className="w-16 mx-auto h-16" src="/logo.jpg" alt="" />
 
                         <p className="mt-5 text-sm text-white xl:ml-6 xl:mt-0">© 2000/2024 EdenaChocolaterie tous droits réservés.</p>
                     </div>
