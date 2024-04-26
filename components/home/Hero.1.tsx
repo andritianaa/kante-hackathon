@@ -57,7 +57,7 @@ export function Hero() {
                     </div>
 
                 </div>
-                {/* <div className="h-[75vh] mt-28">
+            {/* <div className="h-[75vh] mt-28">
               <h1 className="text-center text-3xl md:text-4xl font-bold mb-3">Pourquoi choisir nos produits?</h1>
               <div className="flex justify-between items-center mt-28">
                 <div className="w-1/3">
@@ -75,7 +75,7 @@ export function Hero() {
               </div>
             </div> */}
 
-                <section className="py-10 bg-gray-50 sm:py-10 lg:py-10 dark:bg-neutral-900">
+                <section className="py-10 sm:py-10 lg:py-10 ">
                     <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                         <div className="flex items-end justify-between">
                             <div className="flex-1 text-center lg:text-left">
