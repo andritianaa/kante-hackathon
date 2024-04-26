@@ -29,9 +29,9 @@ export function ChocolateCard() {
             alt="Chocolate Card"
             className="w-full h-[300px] object-cover"
             height="300"
-            src="/placeholder.svg"
+            src={"https://thumbs.dreamstime.com/b/chocolat-avec-la-poudre-de-cacao-125953683.jpg"}
             style={{
-              aspectRatio: "500/300",
+              // aspectRatio: "500/300",
               objectFit: "cover",
             }}
             width="500"
