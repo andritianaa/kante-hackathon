@@ -1,4 +1,5 @@
 import { Hero } from "@/components/home/Hero.1";
+import { Hero2 } from "@/components/home/hero2";
 import { NavBar } from "@/components/home/navbar";
 import { Feature } from "@/components/home/feature";
 import { Footer } from "../components/home/Footer";
@@ -18,6 +19,7 @@ export default function Home() {
   return (
     <>
       <NavBar />
+      <Hero2 />
       <Hero />
       <Feature />
       <Footer />
