@@ -16,7 +16,7 @@ export function Hero() {
     
             </div> */}
 
-                <section className="py-10 sm:py-16 lg:py-24">
+                {/* <section className="py-10 sm:py-16 lg:py-24">
                     <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                         <div className="max-w-2xl mx-auto text-center mt-20">
                             <h2 className="text-3xl font-bold leading-tight text-amber-900 dark:text-white  sm:text-4xl lg:text-5xl">Savourez nos chocolats écologiques.</h2>
@@ -27,11 +27,11 @@ export function Hero() {
 
 
                     </div>
-                </section>
+                </section> */}
 
 
 
-                <div className="max-w-[85rem] mb-20 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-[85rem] mb-20 mt-28 px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
                         <div className="lg:col-span-3">
                             <h1 className="block text-3xl font-bold text-amber-900 sm:text-4xl md:text-5xl lg:text-6xl dark:text-white">Edenia chocolaterie</h1>
@@ -43,7 +43,7 @@ export function Hero() {
                                     <label className="sr-only">Search</label>
                                     <input type="text" id="hero-input" name="hero-input" className="py-3 px-4 block w-full xl:min-w-72 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Enter work email" />
                                 </div>
-                                <a className="w-full sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-amber-700 text-white hover:bg-amber-600 disabled:opacity-50 disabled:pointer-events-none" href="#">
+                                <a className="w-full sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-amber-700 text-white hover:bg-amber-600 dark:bg-black dark:hover:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none" href="#">
                                     <Sparkles />
                                 </a>
                             </div>

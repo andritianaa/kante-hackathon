@@ -77,7 +77,7 @@ export const Footer = () => {
                     <div className="xl:flex xl:items-center xl:justify-start">
                         <img className="w-16 mx-auto h-16" src="/309518993_493093029495190_642745300732547415_n.jpg" alt="" />
 
-                        <p className="mt-5 text-sm text-white xl:ml-6 xl:mt-0">© 2000/2021 ChocoClic tous droits réservés.</p>
+                        <p className="mt-5 text-sm text-white xl:ml-6 xl:mt-0">© 2000/2024 EdenaChocolaterie tous droits réservés.</p>
                     </div>
 
                     <div className="items-center mt-8 xl:mt-0 xl:flex xl:justify-end xl:space-x-8">
