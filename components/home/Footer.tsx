@@ -90,9 +90,9 @@ export const Footer = () => {
                                 <a href="#" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Nos produits </a>
                             </li>
 
-                            <li>
+                            {/* <li>
                                 <a href="#" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Contacts </a>
-                            </li>
+                            </li> */}
 
 
                         </ul>
