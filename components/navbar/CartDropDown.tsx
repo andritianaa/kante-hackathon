@@ -97,7 +97,14 @@ export const CartDropDown = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <ShoppingCart />
+        <div className="relative">
+          <ShoppingCart />
+          {ids.length > 0 && (
+            <div className="absolute w-4 h-4 text-center -top-1.5 -right-1.5 bg-red-500 text-white rounded-full text-xs font-semibold">
+              {ids.length}
+            </div>
+          )}
+        </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <div className="p-3 h-full max-h-[500px] overflow-scroll">
