@@ -44,7 +44,7 @@ export function Hero() {
                                     <input type="text" id="hero-input" name="hero-input" className="py-3 px-4 block w-full xl:min-w-72 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Enter work email" />
                                 </div>
                                 <a className="w-full sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-amber-700 text-white hover:bg-amber-600 disabled:opacity-50 disabled:pointer-events-none" href="#">
-                                    <Sparkles/>
+                                    <Sparkles />
                                 </a>
                             </div>
 
@@ -97,10 +97,10 @@ export function Hero() {
 
                                     </div>
                                     <p className="mt-5 text-2xl font-semibold">
-                                        <a href="#" title="" className="text-amber-700 dark:text-white"> Plantation de cacao bien entretenue </a>
+                                        <a href="#" title="" className="text-black dark:text-white"> Plantation de cacao bien entretenue </a>
                                     </p>
                                     <p className="mt-4 text-base text-gray-600 dark:text-gray-200">Dans nos plantations de cacao écologique, chaque geste est empreint de soin et de respect pour la nature. Les cultivateurs s'engagent à cultiver le cacao de manière durable, en utilisant des méthodes agroforestières qui préservent la biodiversité et régénèrent les sols.</p>
-                                   
+
                                 </div>
                             </div>
 
@@ -114,10 +114,10 @@ export function Hero() {
 
                                     </div>
                                     <p className="mt-5 text-2xl font-semibold">
-                                        <a href="#" title="" className="text-amber-700 dark:text-white"> Production suivant la norme </a>
+                                        <a href="#" title="" className="text-black dark:text-white"> Production suivant la norme </a>
                                     </p>
                                     <p className="mt-4 text-base text-gray-600 dark:text-gray-200">La production de chocolat est un processus méticuleux. Chaque étape est exécutée avec une précision artisanale, garantissant un produit exceptionnel. Les normes de qualité sont maintenues pour la pureté des ingrédients et la sécurité alimentaire.</p>
-                                    
+
                                 </div>
                             </div>
 
@@ -131,11 +131,11 @@ export function Hero() {
 
                                     </div>
                                     <p className="mt-5 text-2xl font-semibold">
-                                        <a href="#" title="" className="text-amber-700 dark:text-white"> Packaging biodégradable </a>
+                                        <a href="#" title="" className="text-black dark:text-white"> Packaging biodégradable </a>
                                     </p>
                                     <p className="mt-4 text-base text-gray-600 dark:text-gray-200">Nous privilégions l'utilisation de packaging dégradable,contribuant à réduire notre empreinte environnementale.Ce choix reflète notre engagement envers la préservation de l'environnement tout en offrant à nos clients une expérience écologique.
                                     </p>
-                                   
+
                                 </div>
                             </div>
                         </div>
