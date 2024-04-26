@@ -74,7 +74,7 @@ export function Hero() {
               </div>
             </div> */}
 
-                <section className="py-10 bg-gray-50 sm:py-16 lg:py-24 dark:bg-neutral-900">
+                <section className="py-10 bg-gray-50 sm:py-10 lg:py-10 dark:bg-neutral-900">
                     <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                         <div className="flex items-end justify-between">
                             <div className="flex-1 text-center lg:text-left">
@@ -169,6 +169,67 @@ export function Hero() {
                         </div> */}
                     </div>
                 </section>
+
+
+                <section className="py-5 sm:py-5 lg:py-5">
+                    <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+                        <div className="max-w-2xl mx-auto text-center mt-20">
+                            <h2 className="text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl lg:text-5xl">Soutien aux communautés locales</h2>
+                            <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-200">"Soutenir les communautés locales est bien plus qu'une action ponctuelle ; c'est un engagement continu envers le développement durable, la résilience et l'autonomie des populations dans la construction d'un avenir inclusif et prospère."</p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <div className="max-w-6xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+                    <div className="grid sm:grid-cols-12 gap-6">
+                        <div className="sm:self-end col-span-12 sm:col-span-7 md:col-span-8 lg:col-span-5 lg:col-start-3">
+                            <a className="group relative block rounded-xl overflow-hidden" href="#">
+                                <div className="aspect-w-12 aspect-h-7 sm:aspect-none rounded-xl overflow-hidden">
+                                    <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl w-full object-cover" src="/agricu1.jpg" alt="Image Description" />
+                                </div>
+
+                            </a>
+                        </div>
+
+                        <div className="sm:self-end col-span-12 sm:col-span-5 md:col-span-4 lg:col-span-3">
+                            <a className="group relative block rounded-xl overflow-hidden" href="#">
+                                <div className="aspect-w-12 aspect-h-7 sm:aspect-none rounded-xl overflow-hidden">
+                                    <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl w-full object-cover" src="/agricu7.jpg" alt="Image Description" />
+                                </div>
+
+                            </a>
+                        </div>
+
+                        <div className="col-span-12 md:col-span-4">
+                            <a className="group relative block rounded-xl overflow-hidden" href="#">
+                                <div className="aspect-w-12 aspect-h-7 sm:aspect-none rounded-xl overflow-hidden">
+                                    <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl w-full object-cover" src="/agricu5.jpg" alt="Image Description" />
+                                </div>
+
+                            </a>
+                        </div>
+
+                        <div className="col-span-12 sm:col-span-6 md:col-span-4">
+                            <a className="group relative block rounded-xl overflow-hidden" href="#">
+                                <div className="aspect-w-12 aspect-h-7 sm:aspect-none rounded-xl overflow-hidden">
+                                    <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl w-full object-cover" src="/agricu6.jpg" alt="Image Description" />
+                                </div>
+
+                            </a>
+                        </div>
+
+                        <div className="col-span-12 sm:col-span-6 md:col-span-4">
+                            <a className="group relative block rounded-xl overflow-hidden" href="#">
+                                <div className="aspect-w-12 aspect-h-7 sm:aspect-none rounded-xl overflow-hidden">
+                                    <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl w-full object-cover" src="/agricu4.jpg" alt="Image Description" />
+                                </div>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
 
             </Layout>
         </>
