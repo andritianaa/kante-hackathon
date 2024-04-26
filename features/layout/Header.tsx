@@ -10,7 +10,7 @@ export const Header = async () => {
   const session = await baseAuth();
 
   return (
-    <header className="w-full border-b border-border py-1 fixed bg-white dark:bg-black top-0 left-0 z-50">
+    <header className="w-full border-b border-border py-1 fixed bg-white dark:bg-black top-0 left-0 z-[1000]">
       <Layout className="flex items-center justify-between gap-4 w-full p-2 border-b-2 ">
         <Link href="/" className="flex-1">
           <Image src="/icon.png" width={32} height={32} alt="team uk logo" />

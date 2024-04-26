@@ -1,5 +1,5 @@
 "use client"
-import { BriefcaseBusiness, Menu } from "lucide-react";
+import { BookImage , Menu } from "lucide-react";
 
 import {
   Cloud,
@@ -16,6 +16,7 @@ import {
   User,
   UserPlus,
   Users,
+  History
 } from "lucide-react";
 
 import {
@@ -65,12 +66,12 @@ export const DropDown = (props: DropDownProps) => {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-          <BriefcaseBusiness className="mr-2 h-4 w-4" />
-            <Link href={"/offer"}>Offers</Link>
+          <BookImage  className="mr-2 h-4 w-4" />
+            <Link href={"/offer"}>Catalogue</Link>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Settings className="mr-2 h-4 w-4" />
-            <Link href={"/settings"}>Settings</Link>
+            <History className="mr-2 h-4 w-4"/>
+            <Link href={"/offer/allCommands"}>Historique</Link>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <Keyboard className="mr-2 h-4 w-4" />
