@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Chocolate } from "../../types/chocolate";
@@ -43,11 +44,9 @@ export function ChocolateCard(chocolate: Chocolate) {
           <div className="text-lg">{chocolate.categorie}</div>
         </div>
         <div className="flex items-center gap-3">
-          <Link href="/offer/details">
-            <Button
-              variant={"outline"}
-              className="w-full"
-            >
+        <Link href={`/offer/details/${encodeURIComponent(String(chocolate.chocolat_id))}`}>
+
+            <Button variant={"outline"} className="w-full">
               Détails
             </Button>
           </Link>
