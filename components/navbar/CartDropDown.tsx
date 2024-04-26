@@ -16,61 +16,54 @@ import { validerCommande } from "../../lib/cart";
 export const CartDropDown = () => {
   const [forceRender, setForceRender] = useState(false);
 
-  function calculRemise(): number {
-    const dateAnniversaire = localStorage.getItem("birth") || "2001-01-01";
-    // Conversion de la date d'anniversaire en objet Date
+  function calculerRemise(dateAnniversaire: string): number {
+    const aujourdhui: Date = new Date();
+    const moisActuel: number = aujourdhui.getMonth();
+    const jourActuel: number = aujourdhui.getDate();
+
     const anniversaire: Date = new Date(dateAnniversaire);
+    const moisAnniversaire: number = anniversaire.getMonth();
+    const jourAnniversaire: number = anniversaire.getDate();
 
-    // Obtention de la date actuelle
-    const dateActuelle: Date = new Date();
+    let moisRestants: number = moisAnniversaire - moisActuel;
+    let jourDifference: number = jourAnniversaire - jourActuel;
 
-    // Calcul de l'année actuelle
-    const anneeActuelle: number = dateActuelle.getFullYear();
-
-    // Calcul de l'année de l'anniversaire
-    const anneeAnniversaire: number = anniversaire.getFullYear();
-
-    // Calcul de la différence en millisecondes entre la date actuelle et l'anniversaire
-    const difference: number = anniversaire.getTime() - dateActuelle.getTime();
-
-    // Conversion de la différence en jours
-    const differenceEnJours: number = difference / (1000 * 3600 * 24);
-
-    // Conversion de la différence en semaines
-    const differenceEnSemaines: number = differenceEnJours / 7;
-
-    // Conversion de la différence en mois
-    const differenceEnMois: number = differenceEnJours / 30;
-
-    // Retirer 365 jours si l'année n'est pas bissextile
-    const nombreDeJoursDansAnnee: number = ((anneeActuelle % 4 === 0 && anneeActuelle % 100 !== 0) || (anneeActuelle % 400 === 0)) ? 366 : 365;
-    const joursRetires: number = (anneeAnniversaire === anneeActuelle) ? 0 : nombreDeJoursDansAnnee;
-
-    // Si l'anniversaire est passé il y a moins de 2 semaines
-    if (differenceEnSemaines < 2) {
-        return 15; // 15% de remise
-    }
-    // Si l'anniversaire est passé il y a maximum 1 mois
-    else if (differenceEnMois <= 1) {
-        return 5; // 5% de remise
-    }
-    // Si l'anniversaire arrive dans maximum 1 mois
-    else if (differenceEnMois <= 1) {
+    if (
+      moisRestants <= 2 &&
+      moisRestants !== 1 &&
+      moisRestants !== 0 &&
+      moisRestants > 0
+    ) {
+      return 3; // 3% de remise
+    } else if (moisRestants <= 1 && moisRestants !== 0 && moisRestants > 0) {
+      if (jourDifference + 30 <= 14) {
+        return 7;
+      } else if (jourDifference + 30 > 14 || jourDifference + 30 < 29) {
         return 7; // 7% de remise
+      }
+    } else if (moisRestants === -1) {
+      if (jourDifference < 0) {
+        const jourDifferencePositive: number = jourDifference + 30; // Ajout de 30 jours pour obtenir une valeur positive
+        if (jourDifferencePositive <= 14) {
+          return 15;
+        } else if (
+          jourDifferencePositive <= 29 ||
+          jourDifferencePositive > 14
+        ) {
+          return 5;
+        }
+      } else if (jourDifference === 0) {
+        return 5; // 5% de remise
+      }
+    } else if (moisRestants === 0) {
+      return 15;
     }
-    // Si l'anniversaire arrive dans maximum 2 mois
-    else if (differenceEnMois <= 2) {
-        return 3; // 3% de remise
-    }
-    // Si aucune condition n'est remplie
-    else {
-        return 0; // Pas de remise
-    }
-}
+    return 0; // Pas de remise
+  }
 
-
-
-
+  // const dateAnniversaireClient: string = "2024-05-30"; // Format : YYYY-MM-DD
+  const remiseBirth: number = calculerRemise(localStorage.getItem("birth")!);
+  console.log("Remise pour ce client :", remiseBirth * 100, "%");
 
   const [ids, setIds] = useState<number[]>(
     JSON.parse(localStorage.getItem("cart") || "[]")
@@ -140,7 +133,7 @@ export const CartDropDown = () => {
       nouvelleRemise += 15;
     }
 
-    nouvelleRemise += calculRemise()
+    nouvelleRemise += remiseBirth;
 
     setRemise(nouvelleRemise);
 
@@ -212,7 +205,9 @@ export const CartDropDown = () => {
               Somme TTC : <span className="font-semibold">{sommeTTC} MGA</span>
             </p>
             <Link href="/offer/commande">
-              <Button onClick={()=> validerCommande(ids)}>Valider commande</Button>
+              <Button onClick={() => validerCommande(ids)}>
+                Valider commande
+              </Button>
             </Link>
           </div>
         </div>
