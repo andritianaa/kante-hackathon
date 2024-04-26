@@ -9,6 +9,7 @@ export function Hero() {
         <h1 className="text-center text-3xl md:text-4xl font-bold">Titre</h1>
         <p className="text-center">Entrez dans un monde de douceur et de durabilité avec Edenia, <br />  <span className="mt-2">le chocolat écologique qui allie plaisir gustatif et engagement environnemental.</span></p>
       </div>
+
     </div>
   );
 }
