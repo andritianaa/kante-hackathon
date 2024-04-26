@@ -7,7 +7,7 @@ export const chocolates = [
         categorie: "Tablettes de chocolat",
         origine: "Côte d'Ivoire",
         prix: "38400.00",
-        image: "tablette_noir_70.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fzerodechet-tours.fr%2Fbiscuits-chocolats%2F54-tablette-chocolat-noir-amandes.html&psig=AOvVaw39mOtuMjacJ2fGEssc2AIf&ust=1714248354039000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIj3qvTW4IUDFQAAAAAdAAAAABAE",
         categorie_id: 1,
         origine_id: 1
     },
@@ -19,7 +19,7 @@ export const chocolates = [
         categorie: "Tablettes de chocolat",
         origine: "Côte d'Ivoire",
         prix: "39500.00",
-        image: "tablette_noir_intense.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.femmeactuelle.fr%2Fcuisine%2Ftendance-cuisine%2Fle-meilleur-des-tablettes-a-patisser-00028&psig=AOvVaw0gLd8bbqiGNLx23wwmnTWY&ust=1714248468750000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMDRw6rX4IUDFQAAAAAdAAAAABAR",
         categorie_id: 1,
         origine_id: 1
     },
@@ -31,7 +31,7 @@ export const chocolates = [
         categorie: "Tablettes de chocolat",
         origine: "Côte d'Ivoire",
         prix: "43500.00",
-        image: "tablette_lait_caramel_beurre_sale.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.stephanepasco.com%2Fproduit%2Ftablette-gourmande-caramel-praline-chocolat-lait%2F&psig=AOvVaw1K0Wie2nvvF_7E3rQVSuyN&ust=1714248557160000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPij2dTX4IUDFQAAAAAdAAAAABAK",
         categorie_id: 1,
         origine_id: 1
     },
@@ -43,7 +43,7 @@ export const chocolates = [
         categorie: "Pralinés",
         origine: "Venezuela",
         prix: "44000.00",
-        image: "praline_noisette.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.emotionssucrees.fr%2Fproduit%2Ftablette-chocolat-noir-praline-noisette%2F&psig=AOvVaw0t_piC8xy73Wzhm4LFlc8O&ust=1714246002902000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIDJypPO4IUDFQAAAAAdAAAAABAE",
         categorie_id: 2,
         origine_id: 2
     },
@@ -54,7 +54,7 @@ export const chocolates = [
         categorie: "Pralinés",
         origine: "Venezuela",
         prix: "47000.00",
-        image: "praline_amande_grillee.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fchocolats-frigoulette.fr%2Fproduit%2Ftablette-amandes-grillees%2F&psig=AOvVaw2HbYN2XuyCCF8LhdP75IXS&ust=1714246074558000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLCamLXO4IUDFQAAAAAdAAAAABAn",
         categorie_id: 2,
         origine_id: 2
     },
@@ -65,7 +65,7 @@ export const chocolates = [
         categorie: "Tablettes de chocolat",
         origine: "Venezuela",
         prix: "24000.00",
-        image: "tablette_lait_noisettes.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.secretdecacao.com%2Fproduit%2Flait-tablette-aux-noisettes%2F&psig=AOvVaw0U_N2zo-2fWiAbn35zdzGq&ust=1714246244519000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOjekIbP4IUDFQAAAAAdAAAAABAJ",
         categorie_id: 1,
         origine_id: 2
     },
@@ -76,7 +76,7 @@ export const chocolates = [
         categorie: "Truffes",
         origine: "Equateur",
         prix: "35500.00",
-        image: "truffe_chocolat_noir.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cuisineaz.com%2Frecettes%2Ftruffes-au-chocolat-5675.aspx&psig=AOvVaw1ZPpfTPrzVYiSczdmOGVeG&ust=1714246337992000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKCY0rLP4IUDFQAAAAAdAAAAABAE",
         categorie_id: 3,
         origine_id: 3
     },
@@ -87,7 +87,7 @@ export const chocolates = [
         categorie: "Truffes",
         origine: "Equateur",
         prix: "28900.00",
-        image: "truffe_chocolat_lait.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.academiedugout.fr%2Frecettes%2Ftruffes-au-chocolat_9973_2&psig=AOvVaw0stokgyvP9uN-XVaIBWD2r&ust=1714246390925000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCID028vP4IUDFQAAAAAdAAAAABAR",
         categorie_id: 3,
         origine_id: 3
     },
@@ -98,7 +98,7 @@ export const chocolates = [
         categorie: "Pralinés",
         origine: "Equateur",
         prix: "43200.00",
-        image: "praline_fondant.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpartagestesrecettes.fr%2Ffondant-praline-healthy&psig=AOvVaw3n_BlHurbXfi0cVNEdrnMk&ust=1714246664903000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKjnu87Q4IUDFQAAAAAdAAAAABAJ",
         categorie_id: 2,
         origine_id: 3
     },
@@ -109,7 +109,7 @@ export const chocolates = [
         categorie: "Chocolats chauds",
         origine: "Madagascar",
         prix: "19200.00",
-        image: "chocolat_chaud_classique.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fsosoir.lesoir.be%2Fles-ingredients-privilegier-pour-un-chocolat-chaud-moins-calorique&psig=AOvVaw3xPIw8M4Tsyp9W_02g1Tv6&ust=1714248644391000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOi2jv7X4IUDFQAAAAAdAAAAABAQ",
         categorie_id: 4,
         origine_id: 4
     },
@@ -120,7 +120,7 @@ export const chocolates = [
         categorie: "Chocolats chauds",
         origine: "Madagascar",
         prix: "18000.00",
-        image: "chocolat_chaud_cannelle_vanille.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ptitecuisinedepauline.com%2F2020%2F02%2Fchocolat-blanc-chaud.html&psig=AOvVaw1dNt9ZJzwuDmofjDxRr5hE&ust=1714246839609000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJiq4KHR4IUDFQAAAAAdAAAAABA0",
         categorie_id: 4,
         origine_id: 4
     },
@@ -131,7 +131,7 @@ export const chocolates = [
         categorie: "Truffes",
         origine: "Madagascar",
         prix: "40000.00",
-        image: "truffe_chocolat_blanc.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgourmand.viepratique.fr%2Frecettes-par-ingredient%2Fsucre%2Ftruffes-chocolat-blanc-et-noix-de-coco-25655.html&psig=AOvVaw0OXL6maW1Lkg7EInwMhCCT&ust=1714246998209000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOigq-3R4IUDFQAAAAAdAAAAABAE",
         categorie_id: 3,
         origine_id: 4
     },
@@ -142,7 +142,7 @@ export const chocolates = [
         categorie: "Dragées",
         origine: "Pérou",
         prix: "24200.00",
-        image: "dragees_chocolat_blanc.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.badaboum.fr%2F1-kilo-de-dragees-blanc-au-chocolat.html&psig=AOvVaw3FzDhl_H9h0hvhSo4Agxxc&ust=1714247100204000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNDPiJ7S4IUDFQAAAAAdAAAAABAE",
         categorie_id: 5,
         origine_id: 5
     },
@@ -153,7 +153,7 @@ export const chocolates = [
         categorie: "Dragées",
         origine: "Pérou",
         prix: "18500.00",
-        image: "dragees_noix_pecan.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.fustuq-hail.com%2Ffr%2Fshop%2Fchocolate%2Fdragee-caramel-chocolate%2F&psig=AOvVaw3Xl5fILzcDs3thKIPOqvwi&ust=1714247147494000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPDTzLTS4IUDFQAAAAAdAAAAABAE",
         categorie_id: 5,
         origine_id: 5
     },
@@ -164,7 +164,7 @@ export const chocolates = [
         categorie: "Chocolats chauds",
         origine: "Pérou",
         prix: "28000.00",
-        image: "chocolat_chaud_epice.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.mesrecettesfaciles.fr%2Frecipe%2Fchocolat-chaud-aux-epices-d-automne&psig=AOvVaw2Jc7ct_5bMJ5zKTdkyCwJ3&ust=1714247225530000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKjE59nS4IUDFQAAAAAdAAAAABAj",
         categorie_id: 4,
         origine_id: 5
     },
@@ -175,7 +175,7 @@ export const chocolates = [
         categorie: "Barres de chocolat",
         origine: "Mexique",
         prix: "31000.00",
-        image: "barre_chocolat_noisette.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.puyricard.fr%2Ffr%2Fchocolats%2F1958-barre-choco-noisettes-caramel.html&psig=AOvVaw3xkvIITYQTemVWsydCKwo3&ust=1714247600114000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNjPuYzU4IUDFQAAAAAdAAAAABAL",
         categorie_id: 6,
         origine_id: 6
     },
@@ -186,7 +186,7 @@ export const chocolates = [
         categorie: "Barres de chocolat",
         origine: "Mexique",
         prix: "36000.00",
-        image: "barre_chocolat_nougat.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Flacabanesurleroc.ca%2Fproducts%2Fbarre-nougat-ganache-au-miel-et-chocolat-noir&psig=AOvVaw3oKROG_dJrPWoRvv-GQ-EK&ust=1714248071289000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKDQ_-zV4IUDFQAAAAAdAAAAABAK",
         categorie_id: 6,
         origine_id: 6
     },
@@ -197,7 +197,7 @@ export const chocolates = [
         categorie: "Dragées",
         origine: "Mexique",
         prix: "32000.00",
-        image: "dragees_amandes.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.fleursdedragees.com%2Fdragees-amande%2F2057-1kg-dragees-amande-pas-cher-blanche-3322219051015.html&psig=AOvVaw3LkfAx9LQbTekBRdfCoczr&ust=1714247841127000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMiynf_U4IUDFQAAAAAdAAAAABAr",
         categorie_id: 5,
         origine_id: 6
     },
@@ -208,7 +208,7 @@ export const chocolates = [
         categorie: "Barres de chocolat",
         origine: "Ghana",
         prix: "35000.00",
-        image: "barre_chocolat_caramel.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.femmeactuelle.fr%2Fcuisine%2Ftendance-cuisine%2Fconnaissez-vous-lorigine-de-la-barre-snickers-2105084&psig=AOvVaw2GQDDjqJhwoiwyOiDr77br&ust=1714247688383000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIDpx7bU4IUDFQAAAAAdAAAAABAZ",
         categorie_id: 6,
         origine_id: 7
     },
@@ -219,7 +219,7 @@ export const chocolates = [
         categorie: "Tablettes de chocolat",
         origine: "Ghana",
         prix: "27500.00",
-        image: "tablette_blanc_citron.png",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.delscookingtwist.com%2Ffr%2Ftablettes-de-chocolat-blanc-au-citron-et-aux-speculoos%2F&psig=AOvVaw3WENmsQntRxzMd49ZaocCk&ust=1714248138960000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJjbtY3W4IUDFQAAAAAdAAAAABAT",
         categorie_id: 1,
         origine_id: 7
     }

@@ -11,20 +11,12 @@ import {
 } from "@/components/ui/select";
 import { ChocolateCard } from "@/components/offer/ChocolateCard";
 import { chocolates } from "@/lib/chocolates";
+import { getOneproduct } from "../../../../../lib/product";
 
-export default async function RoutePage(props: PageParams<{}>) {
-  const chocolate = {
-    chocolat_id: 1,
-    nom: "Tablette Lait Caramel Beurre Sale",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ipsam exercitationem. Sunt voluptatibus amet, necessitatibus veritatis harum mollitia obcaecati ipsa aliquam repudiandae iste quisquam. Similique nobis quas culpa adipisci asperiores accusantium praesentium, officia fugit labore ad illo laboriosam molestias ea, tempore blanditiis! Modi debitis deleniti id, explicabo commodi velit repudiandae.",
-    categorie: "Tablettes de chocolat",
-    origine: "Madagascar",
-    prix: "38400.00",
-    image: "tablette_noir_70.png",
-    categorie_id: 1,
-    origine_id: 1,
-  };
+export default async function RoutePage(props: PageParams<{id:string}>) {
+  const chocolat = getOneproduct(props.params.id);
+  console.log(chocolat);
+  
   return (
     <Layout className="mt-20 max-w-3xl">
       <div className="flex pb-4 gap-4 flex-col w-full justify-center items-center">
@@ -42,24 +34,24 @@ export default async function RoutePage(props: PageParams<{}>) {
             }}
             width="500"
           />
-          <p className="text-3xl py-3">{chocolate.nom}</p>
+          <p className="text-3xl py-3">{chocolat.nom}</p>
           <div className="flex flex-wrap items-center gap-4 pb-3">
             <div className="flex items-center gap-3">
               <HandCoins size={28} opacity={0.8} />
               <div className="text-lg font-normal text-muted-foreground">
-                {chocolate.prix} MGA
+                {chocolat.prix} MGA
               </div>
             </div>
             <div className="flex items-center gap-3">
               <Info size={28} opacity={0.8} />
               <div className="text-lg font-normal text-muted-foreground">
-                {chocolate.categorie}
+                {chocolat.categorie}
               </div>
             </div>
             <div className="flex items-center gap-3">
               <MapPinned size={28} opacity={0.8} />
               <div className="text-lg font-normal text-muted-foreground">
-                {chocolate.origine}
+                {chocolat.origine}
               </div>
             </div>
           </div>
@@ -81,17 +73,17 @@ export default async function RoutePage(props: PageParams<{}>) {
             <Button className="w-full">Add to Cart</Button>
           </div>
           <div className="flex flex-col mt-4">
-            <p className="">{chocolate.description}</p>
+            <p className="">{chocolat.description}</p>
           </div>
         </div>
         <div className="py-3 flex flex-col justify-center items-center font-semibold">
-          Plus de {chocolate.categorie}
+          Plus de {chocolat.categorie}
           <div className="w-[40%] h-[2px] bg-black rounded-md dark:bg-white"></div>
         </div>
         <div className="flex flex-wrap w-full items-center justify-center gap-3 pb-8">
           {chocolates
             .filter(
-              (chocolateMap) => chocolateMap.categorie === chocolate.categorie
+              (chocolateMap) => chocolateMap.categorie === chocolat.categorie
             )
             .map((chocolate) => (
               <ChocolateCard
