@@ -12,7 +12,7 @@ export const Header = async () => {
   return (
     <header className="w-full border-b border-border py-1 fixed bg-white dark:bg-black top-0 left-0 z-50">
       <Layout className="flex items-center justify-between gap-4 w-full p-2 ">
-        <Link href="/" className="flex-1">
+        <Link href="/" >
           <Image src="/icon.png" width={32} height={32} alt="team uk logo" />
         </Link>
         {/* <div className=" justify-between items-center flex max-md:hidden"><MenuNavigation /></div> */}
