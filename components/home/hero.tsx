@@ -42,15 +42,23 @@ export function Hero() {
           </div>
 
         </div>
-        <div className="h-[75vh] mt-28">
+        {/* <div className="h-[75vh] mt-28">
           <h1 className="text-center text-3xl md:text-4xl font-bold mb-3">Pourquoi choisir nos produits?</h1>
-          <div>
-            <div>
-              <img className="size-40" src="/Pourquoi-manger-du-chocolat-n-est-pas-tres-ecolo.jpg" alt="" />
-              <p>lorem</p>
+          <div className="flex justify-between items-center mt-28">
+            <div className="w-1/3">
+              <img className="w-full h-" src="/Pourquoi-manger-du-chocolat-n-est-pas-tres-ecolo.jpg" alt="" />
+              <p className="truncate">Dans nos plantations de cacao écologique, chaque geste est empreint de soin et de respect pour la nature. Les cultivateurs s'engagent à cultiver le cacao de manière durable, en utilisant des méthodes agroforestières qui préservent la biodiversité et régénèrent les sols. Chaque cabosse récoltée est le fruit d'un travail minutieux et passionné, offrant ainsi une expérience chocolatière authentique et pleine de saveur, tout en préservant l'équilibre fragile de notre environnement.</p>
+            </div>
+            <div className="w-1/3">
+              <img className="w-full h-" src="/P1010232_2.jpg" alt="" />
+              <p className="truncate">lorem</p>
+            </div>
+            <div className="w-1/3">
+              <img className="w-full h-" src="/emaballage-papier-de-cacao-le-chocolat-de-tiffanie.jpg" alt="" />
+              <p className="truncate">lorem</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </Layout>
     </>
 
