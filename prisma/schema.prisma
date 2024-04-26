@@ -60,6 +60,7 @@ model User {
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   Command   Command[]
+  Gift      Gift[]
 }
 
 enum Plan {
@@ -79,6 +80,17 @@ model Command {
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
   Chocolat  Chocolat[]
+  Gift      Gift[]
+}
+
+model Gift {
+  id   String @id @default(cuid())
+  user User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  userId    String
+  value     String
+  Command   Command @relation(fields: [commandId], references: [id])
+  commandId String
 }
 
 model Chocolat {
@@ -91,6 +103,7 @@ model Chocolat {
   image       String
   Command     Command? @relation(fields: [commandId], references: [id])
   commandId   String?
+  giftId      String?
 }
 
 model RemiseQt {
