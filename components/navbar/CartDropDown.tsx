@@ -12,33 +12,30 @@ import { Chocolate } from "../../types/chocolate";
 
 export const CartDropDown = () => {
   const [forceRender, setForceRender] = useState(false);
-    // Récupérer les IDs à partir du localStorage et les stocker dans le state "ids"
-    const [ids, setIds] = useState<number[]>(JSON.parse(localStorage.getItem("cart") || "[]"));
-    // Mettre à jour les IDs dans le localStorage et le state lorsque le localStorage change
+  const [ids, setIds] = useState<number[]>(
+    JSON.parse(localStorage.getItem("cart") || "[]")
+  );
 
-    setInterval(() => {
-      setIds(JSON.parse(localStorage.getItem("cart") || "[]"))
-    },200)
+  setInterval(() => {
+    setIds(JSON.parse(localStorage.getItem("cart") || "[]"));
+  }, 200);
 
+  useEffect(() => {
+    window.addEventListener("storage", () => {
+      console.log("reload");
+    });
+    const handleStorageChange = () => {
+      const newIds = JSON.parse(localStorage.getItem("cart") || "[]");
+      setIds(newIds);
+      setForceRender((prev) => !prev);
+    };
+  }, []);
 
-    useEffect(() => {
-      window.addEventListener('storage', ()=>{
-        console.log("reload");
-      });
-        const handleStorageChange = () => {
-            const newIds = JSON.parse(localStorage.getItem("cart") || "[]");
-            setIds(newIds);
-            setForceRender(prev => !prev);
-        };
-    }, []);
-
-  // Compter le nombre d'occurrences de chaque ID
   const idCounts = ids.reduce((acc, id) => {
     acc[id] = (acc[id] || 0) + 1;
     return acc;
   }, {});
 
-  // Ajouter le nombre d'occurrences à chaque objet dans chocolates
   let chocolatesWithOccurences = chocolates.map((chocolate) => {
     const occurences = idCounts[chocolate.chocolat_id] || 0;
     return { ...chocolate, occurences };
@@ -48,9 +45,7 @@ export const CartDropDown = () => {
   const [somme, setSomme] = useState(0);
   const [sommeTTC, setSommeTTC] = useState(0);
 
-
   useEffect(() => {
-
     const groupes = {
       g5: 0,
       g10: 0,
@@ -74,7 +69,6 @@ export const CartDropDown = () => {
       }
     });
 
-    // Calcul de la remise
     let nouvelleRemise = 0;
     if (groupes.g5 >= 2) {
       nouvelleRemise += 5;
@@ -88,7 +82,6 @@ export const CartDropDown = () => {
 
     setRemise(nouvelleRemise);
 
-    // Calcul de la somme
     const nouvelleSomme = chocolatesWithOccurences.reduce(
       (somme, chocolate) =>
         somme + parseFloat(chocolate.prix) * chocolate.occurences,
@@ -96,13 +89,10 @@ export const CartDropDown = () => {
     );
     setSomme(nouvelleSomme);
 
-    // Calcul de la somme TTC
     const nouvelleSommeTTC =
       nouvelleSomme - nouvelleSomme * (nouvelleRemise / 100);
     setSommeTTC(nouvelleSommeTTC);
-  }, [chocolatesWithOccurences]); // Effectue le calcul lorsque chocolatesWithOccurences change
-
-  // Votre logique de groupe ici...
+  }, [chocolatesWithOccurences]);
 
   return (
     <DropdownMenu>
@@ -126,11 +116,19 @@ export const CartDropDown = () => {
               occurences={chocolate.occurences}
             />
           ))}
-          <div className="flex items-center">
-            <p className="">Total remise {remise}</p>
-            <p className="">Somme {somme}</p>
+          <div className="flex flex-col gap-4 mt-4">
+            <div className="flex w-full justify-between">
+              <p className="">
+                Total remise : <span className="text-green-500">{remise}%</span>
+              </p>
+              <p className="">
+                Somme : <span className="font-semibold">{somme} MGA</span>
+              </p>
+            </div>
+            <p className="">
+              Somme TTC : <span className="font-semibold">{sommeTTC} MGA</span>
+            </p>
           </div>
-          <p>Somme TTC {sommeTTC}</p>
         </div>
       </DropdownMenuContent>
     </DropdownMenu>

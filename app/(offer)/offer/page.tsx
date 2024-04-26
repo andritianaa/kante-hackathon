@@ -86,7 +86,7 @@ export default function RoutePage(props: PageParams<{}>) {
   return (
     <Layout className="mt-20">
       <SearchBar onSearch={handleSearch}/>
-      <div className="flex flex-wrap justify-center gap-3 pb-8">
+      <div className="flex flex-wrap justify-center gap-3 pt-4 pb-8">
         {filteredChocolates.map((chocolate) => (
           <ChocolateCard
             chocolat_id={chocolate.chocolat_id}
