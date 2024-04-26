@@ -10,7 +10,7 @@ export const addToCard = (id: number) => {
     }
 
     // Ajouter l'ID à la liste du panier
-    cart.push(id);
+    cart.unshift(id);
     cart.sort((a, b) => a - b);
 
     // Enregistrer le panier mis à jour dans le localStorage en tant que chaîne JSON
@@ -40,4 +40,26 @@ export const removeAll = (id: number) => {
 
     // Enregistrer le panier mis à jour dans le localStorage en tant que chaîne JSON
     localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+export const validerCommande = (commande: number[]) => {
+    // Récupérer le tableau existant dans le localStorage
+    let tableauLocalStorage: number[][] = JSON.parse(localStorage.getItem('tableauCommandes') || '[]');
+    // Ajouter la nouvelle commande au tableau
+    tableauLocalStorage.unshift(commande);
+    // Mettre à jour le localStorage avec le nouveau tableau
+    localStorage.setItem('tableauCommandes', JSON.stringify(tableauLocalStorage));
+
+}
+
+
+export const recommand = (commande: number[]) => {
+    // Récupérer le tableau existant dans le localStorage
+    let tableauLocalStorage: number[][] = JSON.parse(localStorage.getItem('tableauCommandes') || '[]');
+    // Ajouter la nouvelle commande au tableau
+    tableauLocalStorage.unshift(commande);
+    localStorage.setItem("cart", JSON.stringify(commande));
+    // Mettre à jour le localStorage avec le nouveau tableau
+    localStorage.setItem('tableauCommandes', JSON.stringify(tableauLocalStorage));
+
 }
