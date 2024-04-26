@@ -88,7 +88,7 @@ export function Hero() {
 
                         <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 lg:mt-16 lg:grid-cols-3 lg:max-w-full">
                             <div className="overflow-hidden bg-white rounded shadow dark:bg-neutral-800">
-                                <div className="p-5">
+                                <div >
                                     <div className="relative">
                                         <a href="#" title="" className="block aspect-w-4 aspect-h-3">
                                             <img className="object-cover w-full h-full" src="/Pourquoi-manger-du-chocolat-n-est-pas-tres-ecolo2.jpg" alt="" />
@@ -96,16 +96,18 @@ export function Hero() {
 
 
                                     </div>
-                                    <p className="mt-5 text-2xl font-semibold">
-                                        <a href="#" title="" className="text-black dark:text-white"> Plantation de cacao bien entretenue </a>
-                                    </p>
-                                    <p className="mt-4 text-base text-gray-600 dark:text-gray-200">Dans nos plantations de cacao écologique, chaque geste est empreint de soin et de respect pour la nature. Les cultivateurs s'engagent à cultiver le cacao de manière durable, en utilisant des méthodes agroforestières qui préservent la biodiversité et régénèrent les sols.</p>
 
+                                    <div className="p-5">
+                                        <p className="mt-5 text-2xl font-semibold">
+                                            <a href="#" title="" className="text-black dark:text-white"> Plantation de cacao bien entretenue </a>
+                                        </p>
+                                        <p className="mt-4 text-base text-gray-600 dark:text-gray-200">Les cultivateurs s'engagent à cultiver le cacao de manière durable, en utilisant des méthodes agroforestières préservant la biodiversité.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <div className="overflow-hidden bg-white rounded shadow dark:bg-neutral-800">
-                                <div className="p-5">
+                                <div>
                                     <div className="relative">
                                         <a href="#" title="" className="block aspect-w-4 aspect-h-3">
                                             <img className="object-cover w-full h-full" src="/P1010232_2.jpg" alt="" />
@@ -113,16 +115,18 @@ export function Hero() {
 
 
                                     </div>
-                                    <p className="mt-5 text-2xl font-semibold">
-                                        <a href="#" title="" className="text-black dark:text-white"> Production suivant la norme </a>
-                                    </p>
-                                    <p className="mt-4 text-base text-gray-600 dark:text-gray-200">La production de chocolat est un processus méticuleux. Chaque étape est exécutée avec une précision artisanale, garantissant un produit exceptionnel. Les normes de qualité sont maintenues pour la pureté des ingrédients et la sécurité alimentaire.</p>
+                                    <div className="p-5">
+                                        <p className="mt-5 text-2xl font-semibold">
+                                            <a href="#" title="" className="text-black dark:text-white"> Production suivant la norme </a>
+                                        </p>
+                                        <p className="mt-4 text-base text-gray-600 dark:text-gray-200">La production de chocolat est exécutée avec une précision artisanale tout en maintenant les normes de qualité, garantissant un produit exceptionnel.</p>
+                                    </div>
 
                                 </div>
                             </div>
 
                             <div className="overflow-hidden bg-white rounded shadow dark:bg-neutral-800">
-                                <div className="p-5">
+                                <div>
                                     <div className="relative">
                                         <a href="#" title="" className="block aspect-w-4 aspect-h-3">
                                             <img className="object-cover w-full h-full" src="/emaballage-papier-de-cacao-le-chocolat-de-tiffanie.jpg" alt="" />
@@ -130,11 +134,13 @@ export function Hero() {
 
 
                                     </div>
-                                    <p className="mt-5 text-2xl font-semibold">
-                                        <a href="#" title="" className="text-black dark:text-white"> Packaging biodégradable </a>
-                                    </p>
-                                    <p className="mt-4 text-base text-gray-600 dark:text-gray-200">Nous privilégions l'utilisation de packaging dégradable,contribuant à réduire notre empreinte environnementale.Ce choix reflète notre engagement envers la préservation de l'environnement tout en offrant à nos clients une expérience écologique.
-                                    </p>
+                                    <div className="p-5">
+                                        <p className="mt-5 text-2xl font-semibold">
+                                            <a href="#" title="" className="text-black dark:text-white"> Packaging biodégradable </a>
+                                        </p>
+                                        <p className="mt-4 text-base text-gray-600 dark:text-gray-200">Nous privilégions l'utilisation de packaging dégradable comme engagement envers la préservation de l'environnement.
+                                        </p>
+                                    </div>
 
                                 </div>
                             </div>
