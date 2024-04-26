@@ -57,7 +57,7 @@ export function Hero() {
                     </div>
 
                 </div>
-            {/* <div className="h-[75vh] mt-28">
+                {/* <div className="h-[75vh] mt-28">
               <h1 className="text-center text-3xl md:text-4xl font-bold mb-3">Pourquoi choisir nos produits?</h1>
               <div className="flex justify-between items-center mt-28">
                 <div className="w-1/3">
@@ -176,7 +176,7 @@ export function Hero() {
                 <div className="max-w-6xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
                     <div className="grid sm:grid-cols-12 gap-6">
                         <div className="sm:self-end col-span-12 sm:col-span-7 md:col-span-8 lg:col-span-5 lg:col-start-3">
-                            <a className="group relative block rounded-xl overflow-hidden" href="#">
+                            <a className="group relative block rounded-xl overflow-hidden">
                                 <div className="aspect-w-12 aspect-h-7 sm:aspect-none rounded-xl overflow-hidden">
                                     <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl w-full object-cover" src="/agricu1.jpg" alt="Image Description" />
                                 </div>
@@ -185,7 +185,7 @@ export function Hero() {
                         </div>
 
                         <div className="sm:self-end col-span-12 sm:col-span-5 md:col-span-4 lg:col-span-3">
-                            <a className="group relative block rounded-xl overflow-hidden" href="#">
+                            <a className="group relative block rounded-xl overflow-hidden">
                                 <div className="aspect-w-12 aspect-h-7 sm:aspect-none rounded-xl overflow-hidden">
                                     <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl w-full object-cover" src="/agricu7.jpg" alt="Image Description" />
                                 </div>
@@ -194,7 +194,7 @@ export function Hero() {
                         </div>
 
                         <div className="col-span-12 md:col-span-4">
-                            <a className="group relative block rounded-xl overflow-hidden" href="#">
+                            <a className="group relative block rounded-xl overflow-hidden">
                                 <div className="aspect-w-12 aspect-h-7 sm:aspect-none rounded-xl overflow-hidden">
                                     <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl w-full object-cover" src="/agricu5.jpg" alt="Image Description" />
                                 </div>
@@ -203,7 +203,7 @@ export function Hero() {
                         </div>
 
                         <div className="col-span-12 sm:col-span-6 md:col-span-4">
-                            <a className="group relative block rounded-xl overflow-hidden" href="#">
+                            <a className="group relative block rounded-xl overflow-hidden">
                                 <div className="aspect-w-12 aspect-h-7 sm:aspect-none rounded-xl overflow-hidden">
                                     <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl w-full object-cover" src="/agricu6.jpg" alt="Image Description" />
                                 </div>
@@ -212,7 +212,7 @@ export function Hero() {
                         </div>
 
                         <div className="col-span-12 sm:col-span-6 md:col-span-4">
-                            <a className="group relative block rounded-xl overflow-hidden" href="#">
+                            <a className="group relative block rounded-xl overflow-hidden">
                                 <div className="aspect-w-12 aspect-h-7 sm:aspect-none rounded-xl overflow-hidden">
                                     <img className="group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl w-full object-cover" src="/agricu4.jpg" alt="Image Description" />
                                 </div>
