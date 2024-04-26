@@ -15,8 +15,6 @@ import { getOneproduct } from "../../../../../lib/product";
 
 export default async function RoutePage(props: PageParams<{id:string}>) {
   const chocolat = getOneproduct(props.params.id);
-  console.log(chocolat);
-  
   return (
     <Layout className="mt-20 max-w-3xl">
       <div className="flex pb-4 gap-4 flex-col w-full justify-center items-center">
