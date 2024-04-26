@@ -9,7 +9,6 @@ import {
   Select,
 } from "@/components/ui/select";
 
-import { useLocalStorage } from "react-use";
 
 import { Sparkles } from "lucide-react";
 import { Layout } from "../layout";
@@ -37,7 +36,7 @@ export function SearchBar({ onSearch }) {
         
         <Select
           onValueChange={async (v) => {
-            setCategoryFitlter(v);
+            setCategoryFitlter( v === "none" ? "" : v);
             setTimeout(()=>{
               handdleSearch()
             },100)
@@ -62,7 +61,7 @@ export function SearchBar({ onSearch }) {
         </Select>
         <Select
           onValueChange={(v) => {
-            setOriginFitlter(v);
+            setOriginFitlter( v === "none" ? "" : v);
             handdleSearch()
           }}
         >
@@ -82,7 +81,7 @@ export function SearchBar({ onSearch }) {
         </Select>
         <Select
           onValueChange={(v) => {
-            setPriceFitlter(v);
+            setPriceFitlter( v === "none" ? "" : v);
             setTimeout(()=>{
               handdleSearch()
             },100)

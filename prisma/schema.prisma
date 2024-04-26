@@ -56,7 +56,6 @@ model User {
 
   accounts Account[]
   sessions Session[]
-  products Product[]
 
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
@@ -69,59 +68,40 @@ enum Plan {
 }
 
 model Command {
-  id         String  @id @default(cuid())
-  user       User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id         String @id @default(cuid())
+  user       User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   chocolates Int[]
   userId     String
   price      BigInt
-  isShiped   Boolean
+  remise     Int
+  TTC        BigInt
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  Chocolat  Chocolat[]
 }
 
-model Product {
-  id              String  @id @default(cuid())
-  slug            String  @unique
-  name            String
-  image           String?
-  noteText        String?
-  informationText String?
-  reviewText      String?
-  thanksText      String?
-  backgroundColor String?
-  enabled         Boolean @default(true)
-
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId String
-
-  reviews Review[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model Chocolat {
+  chocolat_id Int      @id @default(autoincrement())
+  nom         String
+  description String
+  categorie   String
+  origine     String
+  prix        Int
+  image       String
+  Command     Command? @relation(fields: [commandId], references: [id])
+  commandId   String?
 }
 
-model Review {
-  id         String      @id @default(cuid())
-  rating     Int
-  ip         String
-  text       String?
-  // Audio URL
-  audio      String?
-  socialLink String?
-  socialType SocialType?
-  // Image and name getting from social
-  name       String?
-  image      String?
-
-  productId String
-  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model RemiseQt {
+  id    Int @id @default(autoincrement())
+  start Int
+  end   Int
+  value Int
 }
 
-enum SocialType {
-  LINKEDIN
-  TWITTER
+model RemiseBirth {
+  id    Int @id @default(autoincrement())
+  week  Int
+  value Int
 }

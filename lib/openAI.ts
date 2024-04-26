@@ -18,7 +18,7 @@ export const generate = async (ask: string) => {
                     nom: "Tablette Noir 70%",
                     description: "Delicieuse tablette de chocolat noir avec 70% de cacao.",
                     categorie: "Tablettes de chocolat",
-                    origine: "Côte Ivoire",
+                    origine: "Côte d'Ivoire",
                     prix: "38400",
 
                 },
@@ -27,7 +27,7 @@ export const generate = async (ask: string) => {
                     nom: "Tablette Noir Intense",
                     description: "Tablette de chocolat noir avec 85% de cacao pour une experience intense.",
                     categorie: "Tablettes de chocolat",
-                    origine: "Côte Ivoire",
+                    origine: "Côte d'Ivoire",
                     prix: "39500",
                 },
                 {
@@ -35,7 +35,7 @@ export const generate = async (ask: string) => {
                     nom: "Tablette Lait Caramel Beurre Sale",
                     description: "Tablette de chocolat au lait avec un caramel au beurre sale fondant.",
                     categorie: "Tablettes de chocolat",
-                    origine: "Côte Ivoire",
+                    origine: "Côte d'Ivoire",
                     prix: "43500",
                 },
                 {

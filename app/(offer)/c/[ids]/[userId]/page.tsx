@@ -1,22 +1,20 @@
 "use client";
-import { Link } from "lucide-react";
 import type { PageParams } from "@/types/next";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { ShoppingCart } from "lucide-react";
+import { Link } from "lucide-react";
+
 import { chocolates } from "@/lib/chocolates";
 import { useEffect, useState } from "react";
 import { Chocolate } from "@/types/chocolate";
 import { CartItem } from "@/components/offer/CartItem";
 import { Layout } from "@/components/layout";
-import { RecipeItem } from "../../../../components/offer/RecipeItem";
+import { Button } from "../../../../../components/ui/button";
+import { addVoucher } from "../../../../../actions/user.action";
+import { RecipeItem } from "../../../../../components/offer/RecipeItem";
 
-export default function RoutePage(props: PageParams<{  }>) {
+export default function RoutePage(props: PageParams<{ ids: string, userId: string }>) {
+  const array = props.params.ids.split("%2C").map(Number);
+  localStorage.setItem("cart", JSON.stringify(array));
 
-  const [forceRender, setForceRender] = useState(false);
   const [ids, setIds] = useState<number[]>(
     JSON.parse(localStorage.getItem("cart") || "[]")
   );
@@ -24,17 +22,6 @@ export default function RoutePage(props: PageParams<{  }>) {
   setInterval(() => {
     setIds(JSON.parse(localStorage.getItem("cart") || "[]"));
   }, 200);
-
-  useEffect(() => {
-    window.addEventListener("storage", () => {
-      console.log("reload");
-    });
-    const handleStorageChange = () => {
-      const newIds = JSON.parse(localStorage.getItem("cart") || "[]");
-      setIds(newIds);
-      setForceRender((prev) => !prev);
-    };
-  }, []);
 
   const idCounts = ids.reduce((acc, id) => {
     acc[id] = (acc[id] || 0) + 1;
@@ -102,13 +89,21 @@ export default function RoutePage(props: PageParams<{  }>) {
   
   const copyToClipboard = async () => {
     try {
-
-      await navigator.clipboard.writeText(`http://localhost:3000/c/${ids.toString()}/${localStorage.getItem("userId")}`);
+      await navigator.clipboard.writeText(`http://localhost:3000/c/${ids.toString()}`);
     } catch (error) {
       console.error("Erreur lors de la copie dans le presse-papiers :", error);
       alert("Erreur lors de la copie dans le presse-papiers");
     }
   };
+
+  const handdleCommandWithVoucher = ()=>{
+    let amount = 0
+    if(sommeTTC<= 30000) amount = sommeTTC/ 10
+    else if(sommeTTC <=50000) amount = sommeTTC * 25 / 100
+    else if(sommeTTC <=150000) amount = sommeTTC * 30 /100
+    else if(sommeTTC > 200000) amount = sommeTTC
+    addVoucher(amount,props.params.userId)
+  }
 
   return (
     <Layout>
@@ -116,21 +111,20 @@ export default function RoutePage(props: PageParams<{  }>) {
         <div className="p-3 h-full max-h-[500px] overflow-scroll">
         <div className="flex justify-between">
             <h5 className="text-lg font-bold leading-none text-gray-900 dark:text-white">
-              Mon dernier panier
+              Suggestion d'un ami
             </h5>
-            <Link className="cursor-pointer" onClick={copyToClipboard}/>
+            
           </div>
           {chocolatesWithOccurences.map((chocolate) => (
-            <RecipeItem
-              chocolat_id={chocolate.chocolat_id}
-              nom={chocolate.nom}
-              description={chocolate.description}
-              categorie={chocolate.categorie}
-              origine={chocolate.origine}
-              prix={chocolate.prix}
-              image={chocolate.image}
-              occurences={chocolate.occurences}
-            />
+            
+            <RecipeItem chocolat_id={chocolate.chocolat_id}
+            nom={chocolate.nom}
+            description={chocolate.description}
+            categorie={chocolate.categorie}
+            origine={chocolate.origine}
+            prix={chocolate.prix}
+            image={chocolate.image}
+            occurences={chocolate.occurences}/>
           ))}
           <div className="flex flex-col gap-4 mt-4">
             <div className="flex w-full justify-between">
@@ -144,9 +138,13 @@ export default function RoutePage(props: PageParams<{  }>) {
             <p className="">
               Somme TTC : <span className="font-semibold">{sommeTTC} MGA</span>
             </p>
+            <Button onClick={()=> {
+              handdleCommandWithVoucher()
+            }}>Commander</Button>
           </div>
+          
         </div>
       </div>
     </Layout>
   );
-};
+}

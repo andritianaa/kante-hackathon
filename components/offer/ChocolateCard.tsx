@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Chocolate } from "../../types/chocolate";
 import { HandCoins, Info } from "lucide-react";
-import { addToCard } from "../../lib/cart";
+import { addToCard } from "../../actions/cart.action";
 import Link from "next/link";
 
 export function ChocolateCard(chocolate: Chocolate) {

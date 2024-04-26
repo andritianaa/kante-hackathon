@@ -35,13 +35,18 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SignOutAction } from "../../features/auth/auth.action";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export type DropDownProps = {
   email: string;
   image: string;
+  id: string;
 };
 
 export const DropDown = (props: DropDownProps) => {
+  useEffect(() =>{
+    localStorage.setItem("userId", props.id);
+  })
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

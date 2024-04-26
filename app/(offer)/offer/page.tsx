@@ -1,72 +1,30 @@
 "use client";
 import type { PageParams } from "@/types/next";
 import { Layout } from "@/components/layout";
-import { ChocolateCard } from "../../../components/offer/ChocolateCard";
-import { chocolates } from "../../../lib/chocolates";
-import { SearchBar } from "../../../components/component/SearchBar";
-import { useLocalStorage } from "react-use";
+import { ChocolateCard } from "@/components/offer/ChocolateCard";
+import { chocolates } from "@/lib/chocolates";
+import { SearchBar } from "@/components/component/SearchBar";
 import { useState } from "react";
+import { search } from '@/actions/product.actions';
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { Chocolate } from "../../../types/chocolate";
 
 export default function RoutePage(props: PageParams<{}>) {
-  const [searchFitlter, setSearchFitlter, removeSearchFitlter] =
-    useLocalStorage(`searchFilter`, "");
-  const [categoryFitlter, setCategoryFitlter, removeCategoryFitlter] =
-    useLocalStorage(`categoryFilter`, "");
-  const [originFitlter, setOriginFitlter, removePriginFitlter] =
-    useLocalStorage(`originFilter`, "");
-  const [priceFitlter, setPriceFitlter, removePriceFitlter] = useLocalStorage(
-    `priceFilter`,
-    ""
-  );
 
-  const [filteredChocolates, setFilteredChocolates] = useState(chocolates);
+  const [filteredChocolates, setFilteredChocolates] = useState<Chocolate[]>(chocolates);
   const [page, setPage] = useState(1);
 
-  const handleSearch = (filter) => {
-    console.log("search filter ===> ", filter);
-    filter.category == "none" ? "" : filter.category;
-    filter.origin == "none" ? "" : filter.origin;
-    filter.price == "none" ? "" : filter.price;
-
-    let tempResult = chocolates.filter((chocolate) => {
-      return (
-        (chocolate.nom
-          .toLowerCase()
-          .includes(filter.search ? filter.search?.toLowerCase() : "") ||
-          chocolate.origine
-            .toLowerCase()
-            .includes(filter.search ? filter.search?.toLowerCase() : "") ||
-          chocolate.image
-            .toLowerCase()
-            .includes(filter.search ? filter.search?.toLowerCase() : "") ||
-          chocolate.prix.includes(
-            filter.search ? filter.search?.toLowerCase() : ""
-          ) ||
-          chocolate.categorie
-            .toLowerCase()
-            .includes(filter.search ? filter.search?.toLowerCase() : "") ||
-          chocolate.description
-            .toLowerCase()
-            .includes(filter.search ? filter.search?.toLowerCase() : "")) &&
-        chocolate.categorie
-          .toLowerCase()
-          .includes(filter.category ? filter.category?.toLowerCase() : "") &&
-        chocolate.origine
-          .toLowerCase()
-          .includes(filter.origin ? filter.origin?.toLowerCase() : "")
-      );
-    });
-
-    setFilteredChocolates(tempResult);
+  const handleSearch =async (filter) => {
+    
+    setTimeout(() =>{}, 20)
+    setFilteredChocolates(await search(filter));
   };
 
   const handdlePagination = (page: number)=>{

@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { Chocolate } from "../../types/chocolate";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { validerCommande } from "../../lib/cart";
+import { validerCommande } from "../../actions/cart.action";
 
 export const CartDropDown = () => {
   const [forceRender, setForceRender] = useState(false);

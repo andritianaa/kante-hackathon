@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 import { useState } from "react";
 import { Chocolate } from "../../types/chocolate";
 import { Input } from "../ui/input";
-import { addToCard, removeAll, removeToCard } from "../../lib/cart";
+import { addToCard, removeAll, removeToCard } from "../../actions/cart.action";
 
 export const CartItem = (chocolate: Chocolate) => {
   const [quantity, setQuantity] = useState<number>(chocolate.occurences || 0);

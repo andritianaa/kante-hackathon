@@ -27,6 +27,7 @@ export const Header = async () => {
               <DropDown
                 email={session?.user.email!}
                 image={session?.user.image!}
+                id={session?.user.id!}
               />
             </div>
           )}
