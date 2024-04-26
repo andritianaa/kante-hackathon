@@ -10,11 +10,11 @@ import {
 import { ShoppingCart } from "lucide-react";
 import { CartItem } from "../offer/CartItem";
 import { chocolates } from "../../lib/chocolates";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Chocolate } from "../../types/chocolate";
 
 export const CartDropDown = () => {
-  const ids = [1, 1, 1, 5, 6, 8, 9, 11];
+  const ids = [1, 16];
   // Compter le nombre d'occurrences de chaque ID
   const idCounts = ids.reduce((acc, id) => {
     acc[id] = (acc[id] || 0) + 1;
@@ -22,7 +22,7 @@ export const CartDropDown = () => {
   }, {});
 
   // Ajouter le nombre d'occurrences à chaque objet dans chocolates
-  const chocolatesWithOccurences = chocolates.map((chocolate) => {
+  let chocolatesWithOccurences = chocolates.map((chocolate) => {
     const occurences = idCounts[chocolate.chocolat_id] || 0;
     return { ...chocolate, occurences };
   });
@@ -31,36 +31,61 @@ export const CartDropDown = () => {
   const [somme, setSomme] = useState(0);
   const [sommeTTC, setSommeTTC] = useState(0);
 
-  type Tchoc = {
-    g5: Chocolate[];
-    g10: Chocolate[];
-    g15: Chocolate[];
-  };
-  const groupes = {
+  const [groupes, setGroupes] = useState({
     g5: 0,
     g10: 0,
     g15: 0,
-  };
-
-  chocolatesWithOccurences.forEach((chocolat: Chocolate) => {
-    const prix = parseFloat(chocolat.prix);
-    if (prix >= 20000 && prix <= 30000) {
-      groupes["g5"] = groupes["g5"] + (chocolat.occurences ? chocolat.occurences : 0);
-    } else if (prix > 30000 && prix <= 38000) {
-      groupes["g10"] = groupes["g10"] + (chocolat.occurences ? chocolat.occurences : 0);
-    } else if (prix > 38000) {
-      groupes["g15"] = groupes["g15"] + (chocolat.occurences ? chocolat.occurences : 0);
-    }
   });
-  if (groupes.g5 >=2){
-    setRemise(remise + 5)
-  }
-  if (groupes.g10 >=3){
-    setRemise(remise + 10)
-  }
-  if (groupes.g15 >=3){
-    setRemise(remise + 15)
-  }
+  useEffect(() => {
+     chocolatesWithOccurences =  chocolatesWithOccurences.filter(choco =>  choco.occurences > 0)
+
+    chocolatesWithOccurences.forEach((chocolat: Chocolate) => {
+        
+        const prix = parseFloat(chocolat.prix);
+        if (prix >= 20000 && prix <= 30000) {
+            console.log(chocolat);
+            
+            groupes["g5"] =
+            groupes["g5"] + (chocolat.occurences ? chocolat.occurences : 0);
+            console.log(groupes.g5);
+      } else if (prix > 30000 && prix <= 38000) {
+        groupes["g10"] =
+          groupes["g10"] + (chocolat.occurences ? chocolat.occurences : 0);
+      } else if (prix > 38000) {
+        groupes["g15"] =
+          groupes["g15"] + (chocolat.occurences ? chocolat.occurences : 0);
+      }
+    });
+    // Calcul de la remise
+    let nouvelleRemise = 0;
+    if (groupes.g5 >= 2) {
+      nouvelleRemise += 5;
+    }
+    if (groupes.g10 >= 3) {
+      nouvelleRemise += 10;
+    }
+    if (groupes.g15 >= 3) {
+      nouvelleRemise += 15;
+    }
+
+    setRemise(nouvelleRemise);
+
+    // Calcul de la somme
+    const nouvelleSomme = chocolatesWithOccurences.reduce(
+      (somme, chocolate) =>
+        somme + parseFloat(chocolate.prix) * chocolate.occurences,
+      0
+    );
+    setSomme(nouvelleSomme);
+
+    // Calcul de la somme TTC
+    const nouvelleSommeTTC =
+      nouvelleSomme - nouvelleSomme * (nouvelleRemise / 100);
+    setSommeTTC(nouvelleSommeTTC);
+  }, [chocolatesWithOccurences]); // Effectue le calcul lorsque chocolatesWithOccurences change
+
+  // Votre logique de groupe ici...
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
