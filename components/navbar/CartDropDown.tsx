@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import { Chocolate } from "../../types/chocolate";
 
 export const CartDropDown = () => {
-  const ids = [1, 16];
+  const ids = [1, 16, 16, 1,1];
   // Compter le nombre d'occurrences de chaque ID
   const idCounts = ids.reduce((acc, id) => {
     acc[id] = (acc[id] || 0) + 1;
@@ -31,23 +31,23 @@ export const CartDropDown = () => {
   const [somme, setSomme] = useState(0);
   const [sommeTTC, setSommeTTC] = useState(0);
 
-  const [groupes, setGroupes] = useState({
-    g5: 0,
-    g10: 0,
-    g15: 0,
-  });
-  useEffect(() => {
-     chocolatesWithOccurences =  chocolatesWithOccurences.filter(choco =>  choco.occurences > 0)
 
+  useEffect(() => {
+
+    const groupes = {
+      g5: 0,
+      g10: 0,
+      g15: 0,
+    };
+
+    chocolatesWithOccurences = chocolatesWithOccurences.filter(
+      (choco) => choco.occurences > 0
+    );
     chocolatesWithOccurences.forEach((chocolat: Chocolate) => {
-        
-        const prix = parseFloat(chocolat.prix);
-        if (prix >= 20000 && prix <= 30000) {
-            console.log(chocolat);
-            
-            groupes["g5"] =
-            groupes["g5"] + (chocolat.occurences ? chocolat.occurences : 0);
-            console.log(groupes.g5);
+      const prix = parseFloat(chocolat.prix);
+      if (prix >= 20000 && prix <= 30000) {
+        groupes["g5"] =
+          groupes["g5"] + (chocolat.occurences ? chocolat.occurences : 0);
       } else if (prix > 30000 && prix <= 38000) {
         groupes["g10"] =
           groupes["g10"] + (chocolat.occurences ? chocolat.occurences : 0);
@@ -56,6 +56,7 @@ export const CartDropDown = () => {
           groupes["g15"] + (chocolat.occurences ? chocolat.occurences : 0);
       }
     });
+
     // Calcul de la remise
     let nouvelleRemise = 0;
     if (groupes.g5 >= 2) {
