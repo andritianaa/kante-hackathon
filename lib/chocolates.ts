@@ -1,5 +1,6 @@
 export const chocolates = [
     {
+        occurences:3,
         chocolat_id: 1,
         nom: "Tablette Noir 70%",
         description: "Delicieuse tablette de chocolat noir avec 70% de cacao.",
@@ -11,6 +12,7 @@ export const chocolates = [
         origine_id: 1
     },
     {
+        occurences:2,
         chocolat_id: 8,
         nom: "Tablette Noir Intense",
         description: "Tablette de chocolat noir avec 85% de cacao pour une experience intense.",
@@ -22,6 +24,7 @@ export const chocolates = [
         origine_id: 1
     },
     {
+        occurences:1,
         chocolat_id: 14,
         nom: "Tablette Lait Caramel Beurre Sale",
         description: "Tablette de chocolat au lait avec un caramel au beurre sale fondant.",
@@ -33,6 +36,7 @@ export const chocolates = [
         origine_id: 1
     },
     {
+        occurences:5,
         chocolat_id: 9,
         nom: "Praline Noisette",
         description: "Praline fondant aux eclats de noisettes torrefiees.",

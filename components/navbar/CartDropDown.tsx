@@ -1,0 +1,95 @@
+"use client";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ShoppingCart } from "lucide-react";
+import { CartItem } from "../offer/CartItem";
+import { chocolates } from "../../lib/chocolates";
+import { useState } from "react";
+import { Chocolate } from "../../types/chocolate";
+
+export const CartDropDown = () => {
+  const ids = [1, 1, 1, 5, 6, 8, 9, 11];
+  // Compter le nombre d'occurrences de chaque ID
+  const idCounts = ids.reduce((acc, id) => {
+    acc[id] = (acc[id] || 0) + 1;
+    return acc;
+  }, {});
+
+  // Ajouter le nombre d'occurrences à chaque objet dans chocolates
+  const chocolatesWithOccurences = chocolates.map((chocolate) => {
+    const occurences = idCounts[chocolate.chocolat_id] || 0;
+    return { ...chocolate, occurences };
+  });
+
+  const [remise, setRemise] = useState(0);
+  const [somme, setSomme] = useState(0);
+  const [sommeTTC, setSommeTTC] = useState(0);
+
+  type Tchoc = {
+    g5: Chocolate[];
+    g10: Chocolate[];
+    g15: Chocolate[];
+  };
+  const groupes = {
+    g5: 0,
+    g10: 0,
+    g15: 0,
+  };
+
+  chocolatesWithOccurences.forEach((chocolat: Chocolate) => {
+    const prix = parseFloat(chocolat.prix);
+    if (prix >= 20000 && prix <= 30000) {
+      groupes["g5"] = groupes["g5"] + (chocolat.occurences ? chocolat.occurences : 0);
+    } else if (prix > 30000 && prix <= 38000) {
+      groupes["g10"] = groupes["g10"] + (chocolat.occurences ? chocolat.occurences : 0);
+    } else if (prix > 38000) {
+      groupes["g15"] = groupes["g15"] + (chocolat.occurences ? chocolat.occurences : 0);
+    }
+  });
+  if (groupes.g5 >=2){
+    setRemise(remise + 5)
+  }
+  if (groupes.g10 >=3){
+    setRemise(remise + 10)
+  }
+  if (groupes.g15 >=3){
+    setRemise(remise + 15)
+  }
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger>
+        <ShoppingCart />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <div className="p-3 h-full max-h-[500px] overflow-scroll">
+          <h5 className="text-lg font-bold leading-none text-gray-900 dark:text-white">
+            Mon panier
+          </h5>
+          {chocolatesWithOccurences.map((chocolate) => (
+            <CartItem
+              chocolat_id={chocolate.chocolat_id}
+              nom={chocolate.nom}
+              description={chocolate.description}
+              categorie={chocolate.categorie}
+              origine={chocolate.origine}
+              prix={chocolate.prix}
+              image={chocolate.image}
+              occurences={chocolate.occurences}
+            />
+          ))}
+          <div className="flex items-center">
+            <p className="">Total remise {remise}</p>
+            <p className="">Somme {somme}</p>
+          </div>
+          <p>Somme TTC {sommeTTC}</p>
+        </div>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+};
