@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { Chocolate } from "../../types/chocolate";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { validerCommande } from "../../lib/cart";
 
 export const CartDropDown = () => {
   const [forceRender, setForceRender] = useState(false);
@@ -211,7 +212,7 @@ export const CartDropDown = () => {
               Somme TTC : <span className="font-semibold">{sommeTTC} MGA</span>
             </p>
             <Link href="/offer/commande">
-              <Button>Valider commande</Button>
+              <Button onClick={()=> validerCommande(ids)}>Valider commande</Button>
             </Link>
           </div>
         </div>
