@@ -11,81 +11,100 @@ import { useEffect, useState } from "react";
 import { Chocolate } from "../../types/chocolate";
 
 export const CartDropDown = () => {
-  const ids = [1, 16, 16, 1, 1];
+  const [forceRender, setForceRender] = useState(false);
+  const [ids, setIds] = useState<number[]>(
+    JSON.parse(localStorage.getItem("cart") || "[]")
+  );
+
+  setInterval(() => {
+    setIds(JSON.parse(localStorage.getItem("cart") || "[]"));
+  }, 200);
+
+  useEffect(() => {
+    window.addEventListener("storage", () => {
+      console.log("reload");
+    });
+    const handleStorageChange = () => {
+      const newIds = JSON.parse(localStorage.getItem("cart") || "[]");
+      setIds(newIds);
+      setForceRender((prev) => !prev);
+    };
+  }, []);
+
+  const idCounts = ids.reduce((acc, id) => {
+    acc[id] = (acc[id] || 0) + 1;
+    return acc;
+  }, {});
+
+  let chocolatesWithOccurences = chocolates.map((chocolate) => {
+    const occurences = idCounts[chocolate.chocolat_id] || 0;
+    return { ...chocolate, occurences };
+  });
 
   const [remise, setRemise] = useState(0);
   const [somme, setSomme] = useState(0);
   const [sommeTTC, setSommeTTC] = useState(0);
 
-    // Compter le nombre d'occurrences de chaque ID
-    const idCounts = ids.reduce((acc, id) => {
-      acc[id] = (acc[id] || 0) + 1;
-      return acc;
-    }, {});
+  useEffect(() => {
+    const groupes = {
+      g5: 0,
+      g10: 0,
+      g15: 0,
+    };
 
-    // Ajouter le nombre d'occurrences à chaque objet dans chocolates
-    let chocolatesWithOccurences = chocolates.map((chocolate) => {
-      const occurences = idCounts[chocolate.chocolat_id] || 0;
-      return { ...chocolate, occurences };
+    chocolatesWithOccurences = chocolatesWithOccurences.filter(
+      (choco) => choco.occurences > 0
+    );
+    chocolatesWithOccurences.forEach((chocolat: Chocolate) => {
+      const prix = parseFloat(chocolat.prix);
+      if (prix >= 20000 && prix <= 30000) {
+        groupes["g5"] =
+          groupes["g5"] + (chocolat.occurences ? chocolat.occurences : 0);
+      } else if (prix > 30000 && prix <= 38000) {
+        groupes["g10"] =
+          groupes["g10"] + (chocolat.occurences ? chocolat.occurences : 0);
+      } else if (prix > 38000) {
+        groupes["g15"] =
+          groupes["g15"] + (chocolat.occurences ? chocolat.occurences : 0);
+      }
     });
 
-    useEffect(() => {
-      const groupes = {
-        g5: 0,
-        g10: 0,
-        g15: 0,
-      };
+    let nouvelleRemise = 0;
+    if (groupes.g5 >= 2) {
+      nouvelleRemise += 5;
+    }
+    if (groupes.g10 >= 3) {
+      nouvelleRemise += 10;
+    }
+    if (groupes.g15 >= 3) {
+      nouvelleRemise += 15;
+    }
 
-      chocolatesWithOccurences = chocolatesWithOccurences.filter(
-        (choco) => choco.occurences > 0
-      );
-      chocolatesWithOccurences.forEach((chocolat: Chocolate) => {
-        const prix = parseFloat(chocolat.prix);
-        if (prix >= 20000 && prix <= 30000) {
-          groupes["g5"] =
-            groupes["g5"] + (chocolat.occurences ? chocolat.occurences : 0);
-        } else if (prix > 30000 && prix <= 38000) {
-          groupes["g10"] =
-            groupes["g10"] + (chocolat.occurences ? chocolat.occurences : 0);
-        } else if (prix > 38000) {
-          groupes["g15"] =
-            groupes["g15"] + (chocolat.occurences ? chocolat.occurences : 0);
-        }
-      });
+    setRemise(nouvelleRemise);
 
-      // Calcul de la remise
-      let nouvelleRemise = 0;
-      if (groupes.g5 >= 2) {
-        nouvelleRemise += 5;
-      }
-      if (groupes.g10 >= 3) {
-        nouvelleRemise += 10;
-      }
-      if (groupes.g15 >= 3) {
-        nouvelleRemise += 15;
-      }
+    const nouvelleSomme = chocolatesWithOccurences.reduce(
+      (somme, chocolate) =>
+        somme + parseFloat(chocolate.prix) * chocolate.occurences,
+      0
+    );
+    setSomme(nouvelleSomme);
 
-      setRemise(nouvelleRemise);
-
-      // Calcul de la somme
-      const nouvelleSomme = chocolatesWithOccurences.reduce(
-        (somme, chocolate) =>
-          somme + parseFloat(chocolate.prix) * chocolate.occurences,
-        0
-      );
-      setSomme(nouvelleSomme);
-
-      // Calcul de la somme TTC
-      const nouvelleSommeTTC =
-        nouvelleSomme - nouvelleSomme * (nouvelleRemise / 100);
-      setSommeTTC(nouvelleSommeTTC);
-    }, [chocolatesWithOccurences]); // Effectue le calcul lorsque chocolatesWithOccurences change
-  // Votre logique de groupe ici...
+    const nouvelleSommeTTC =
+      nouvelleSomme - nouvelleSomme * (nouvelleRemise / 100);
+    setSommeTTC(nouvelleSommeTTC);
+  }, [chocolatesWithOccurences]);
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <ShoppingCart />
+        <div className="relative">
+          <ShoppingCart />
+          {ids.length > 0 && (
+            <div className="absolute w-4 h-4 text-center -top-1.5 -right-1.5 bg-red-500 text-white rounded-full text-xs font-semibold">
+              {ids.length}
+            </div>
+          )}
+        </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <div className="p-3 h-full max-h-[500px] overflow-scroll">
@@ -104,22 +123,17 @@ export const CartDropDown = () => {
               occurences={chocolate.occurences}
             />
           ))}
-          <div className="flex flex-col gap-3 mt-3">
-            <div className="flex justify-between items-center">
-              <p className="flex gap-4 text-md">
-                Total remise :{" "}
-                <span className="text-green-500">{remise} %</span>{" "}
+          <div className="flex flex-col gap-4 mt-4">
+            <div className="flex w-full justify-between">
+              <p className="">
+                Total remise : <span className="text-green-500">{remise}%</span>
               </p>
-              <p className="flex gap-4 text-md">
-                {" "}
-                Somme : <span className="font-semibold">{somme} MGA</span>{" "}
+              <p className="">
+                Somme : <span className="font-semibold">{somme} MGA</span>
               </p>
             </div>
-            <p className="flex gap-4 text-md">
-              {" "}
-              Somme TTC : <span className="font-semibold">
-                {sommeTTC} MGA
-              </span>{" "}
+            <p className="">
+              Somme TTC : <span className="font-semibold">{sommeTTC} MGA</span>
             </p>
           </div>
         </div>

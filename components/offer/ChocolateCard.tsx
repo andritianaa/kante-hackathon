@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Chocolate } from "../../types/chocolate";
 import { HandCoins, Info } from "lucide-react";
+import { addToCard } from "../../lib/cart";
 
 export function ChocolateCard(chocolate: Chocolate) {
   return (
@@ -36,7 +37,7 @@ export function ChocolateCard(chocolate: Chocolate) {
           <Info size={28}/>
           <div className="text-lg">{chocolate.categorie}</div>
         </div>
-        <Button className="w-full">Add to Cart</Button>
+        <Button className="w-full" onClick={()=>addToCard(chocolate.chocolat_id)}>Add to Cart</Button>
       </div>
     </Card>
   );
