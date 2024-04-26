@@ -6,7 +6,6 @@ import { DropDown } from "@/components/navbar/DropDown";
 import { baseAuth } from "@/lib/auth";
 import { SigninBtn } from "../auth/SigninBtn";
 import { CartDropDown } from "../../components/navbar/CartDropDown";
-import { CartDrawer } from "../../components/navbar/CartDrawer";
 export const Header = async () => {
   const session = await baseAuth();
 
@@ -18,7 +17,7 @@ export const Header = async () => {
         </Link>
         {/* <div className=" justify-between items-center flex max-md:hidden"><MenuNavigation /></div> */}
         <div className="flex items-center gap-3 m-3">
-          {session?.user && <CartDrawer />}
+          <div className="flex items-center">{session?.user && <CartDropDown />}</div>
           <div className=" items-center gap-2 flex-1 justify-end flex md:hidden">
             <ModeToggle />
             {!session?.user && <SigninBtn />}

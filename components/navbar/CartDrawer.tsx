@@ -14,7 +14,7 @@ import { Button } from "../ui/button";
 export const CartDrawer = () => {
   return (
     <Drawer>
-      <DrawerTrigger className="sm:hidden">Open</DrawerTrigger>
+      <DrawerTrigger>Open</DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Are you absolutely sure?</DrawerTitle>
