@@ -5,6 +5,7 @@ import Link from "next/link";
 import { DropDown } from "@/components/navbar/DropDown";
 import { baseAuth } from "@/lib/auth";
 import { SigninBtn } from "../auth/SigninBtn";
+import { CartDropDown } from "../../components/navbar/CartDropDown";
 export const Header = async () => {
   const session = await baseAuth();
 
@@ -15,17 +16,21 @@ export const Header = async () => {
           <Image src="/icon.png" width={32} height={32} alt="team uk logo" />
         </Link>
         {/* <div className=" justify-between items-center flex max-md:hidden"><MenuNavigation /></div> */}
-
-        <div className=" items-center gap-2 flex-1 justify-end flex md:hidden">
-          <ModeToggle />
-          {!session?.user && <SigninBtn />}
-
-        </div>
-        {session?.user && (
-          <div className="">
-            <DropDown email={session?.user.email!} image={session?.user.image!} />
+        <div className="flex items-center gap-3 m-3">
+          {session?.user && <CartDropDown />}
+          <div className=" items-center gap-2 flex-1 justify-end flex md:hidden">
+            <ModeToggle />
+            {!session?.user && <SigninBtn />}
           </div>
-        )}
+          {session?.user && (
+            <div className="">
+              <DropDown
+                email={session?.user.email!}
+                image={session?.user.image!}
+              />
+            </div>
+          )}
+        </div>
       </Layout>
     </header>
   );

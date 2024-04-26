@@ -11,7 +11,7 @@ export default function Home() {
     nom: "Tablette Noir 70%",
     description: "Delicieuse tablette de chocolat noir avec 70% de cacao.",
     categorie: "Tablettes de chocolat",
-    origine: "C“te Ivoire",
+    origine: "Côte Ivoire",
     prix: "38400.00",
     image: "tablette_noir_70.png",
   };
