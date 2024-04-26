@@ -1,7 +1,19 @@
+import { Chocolate } from "../types/chocolate";
 import { chocolates } from "./chocolates";
 
-export function getOneproduct(id: string) {
+export function getOneproduct(id: string): Chocolate {
     const chocoId = parseInt(id);
-    const chocolate = chocolates.find((chocolate) => chocolate.categorie_id === chocoId);
-    return chocolate || null; // Si aucun chocolat n'est trouvé, retourner null
+    let chocolate: Chocolate | undefined; // Initialisation avec undefined
+
+    chocolates.forEach((choco) => {
+        if (choco.chocolat_id === chocoId) {
+            chocolate = choco;
+        }
+    });
+
+    if (!chocolate) {
+        throw new Error(`Aucun chocolat trouvé avec l'identifiant ${id}`);
+    }
+
+    return chocolate;
 }
