@@ -60,31 +60,31 @@ export function Hero() {
           </div>
         </div> */}
 
-        <section className="py-10 bg-gray-50 sm:py-16 lg:py-24">
+        <section className="py-10 bg-gray-50 sm:py-16 lg:py-24 dark:bg-neutral-900">
           <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="flex items-end justify-between">
               <div className="flex-1 text-center lg:text-left">
-                <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Pourquoi nos produits?</h2>
-                <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600 lg:mx-0">Nos produits se distinguent par Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quidem expedita officia ipsa unde accusantium</p>
+                <h2 className="text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl lg:text-5xl">Pourquoi nos produits?</h2>
+                <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-200 lg:mx-0">Nos produits se distinguent par Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quidem expedita officia ipsa unde accusantium</p>
               </div>
 
 
             </div>
 
             <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 lg:mt-16 lg:grid-cols-3 lg:max-w-full">
-              <div className="overflow-hidden bg-white rounded shadow">
+              <div className="overflow-hidden bg-white rounded shadow dark:bg-neutral-800">
                 <div className="p-5">
                   <div className="relative">
                     <a href="#" title="" className="block aspect-w-4 aspect-h-3">
-                      <img className="object-cover w-full h-full" src="/Pourquoi-manger-du-chocolat-n-est-pas-tres-ecolo.jpg" alt="" />
+                      <img className="object-cover w-full h-full" src="/Pourquoi-manger-du-chocolat-n-est-pas-tres-ecolo2.jpg" alt="" />
                     </a>
 
 
                   </div>
                   <p className="mt-5 text-2xl font-semibold">
-                    <a href="#" title="" className="text-black"> Plantation de cacao bien entretenue </a>
+                    <a href="#" title="" className="text-black dark:text-white"> Plantation de cacao bien entretenue </a>
                   </p>
-                  <p className="mt-4 text-base text-gray-600">Dans nos plantations de cacao écologique, chaque geste est empreint de soin et de respect pour la nature. Les cultivateurs s'engagent à cultiver le cacao de manière durable, en utilisant des méthodes agroforestières qui préservent la biodiversité et régénèrent les sols.</p>
+                  <p className="mt-4 text-base text-gray-600 dark:text-gray-200">Dans nos plantations de cacao écologique, chaque geste est empreint de soin et de respect pour la nature. Les cultivateurs s'engagent à cultiver le cacao de manière durable, en utilisant des méthodes agroforestières qui préservent la biodiversité et régénèrent les sols.</p>
                   <a href="#" title="" className="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
                     Continue Reading
                     <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -94,7 +94,7 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="overflow-hidden bg-white rounded shadow">
+              <div className="overflow-hidden bg-white rounded shadow dark:bg-neutral-800">
                 <div className="p-5">
                   <div className="relative">
                     <a href="#" title="" className="block aspect-w-4 aspect-h-3">
@@ -104,9 +104,9 @@ export function Hero() {
 
                   </div>
                   <p className="mt-5 text-2xl font-semibold">
-                    <a href="#" title="" className="text-black"> Production suivant la norme </a>
+                    <a href="#" title="" className="text-black dark:text-white"> Production suivant la norme </a>
                   </p>
-                  <p className="mt-4 text-base text-gray-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                  <p className="mt-4 text-base text-gray-600 dark:text-gray-200">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
                   <a href="#" title="" className="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
                     Continue Reading
                     <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -116,7 +116,7 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="overflow-hidden bg-white rounded shadow">
+              <div className="overflow-hidden bg-white rounded shadow dark:bg-neutral-800">
                 <div className="p-5">
                   <div className="relative">
                     <a href="#" title="" className="block aspect-w-4 aspect-h-3">
@@ -126,9 +126,9 @@ export function Hero() {
 
                   </div>
                   <p className="mt-5 text-2xl font-semibold">
-                    <a href="#" title="" className="text-black"> 5 Productivity tips to write faster at morning. </a>
+                    <a href="#" title="" className="text-black dark:text-white"> Packaging biodégradabl </a>
                   </p>
-                  <p className="mt-4 text-base text-gray-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                  <p className="mt-4 text-base text-gray-600 dark:text-gray-200">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
                   <a href="#" title="" className="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
                     Continue Reading
                     <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
