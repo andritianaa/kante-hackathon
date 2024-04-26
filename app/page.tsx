@@ -17,15 +17,7 @@ export default function Home() {
   };
   return (
     <>
-      <ChocolateCard
-        chocolat_id={chocolate.chocolat_id}
-        nom={chocolate.nom}
-        description={chocolate.description}
-        categorie={chocolate.categorie}
-        origine={chocolate.origine}
-        prix={chocolate.prix}
-        image={chocolate.image}
-      />
+     
       <NavBar />
       <Hero />
       <Feature />
