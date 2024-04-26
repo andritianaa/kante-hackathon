@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full ">
-      <body className={cn(inter.className, `scrollbar scrollbar-thumb-black dark:scrollbar-thumb-white`)}>
+      <body className={cn(inter.className, ``)}>
         
         <Providers>
         <Birth/>

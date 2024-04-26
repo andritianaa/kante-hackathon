@@ -1,22 +1,17 @@
-"use client"
-import { BookImage , Menu } from "lucide-react";
+"use client";
+import { BookImage, Menu } from "lucide-react";
 
 import {
   Cloud,
-  CreditCard,
-  Github,
-  Keyboard,
   LifeBuoy,
   LogOut,
   Mail,
   MessageSquare,
   Plus,
   PlusCircle,
-  Settings,
-  User,
   UserPlus,
   Users,
-  History
+  History,
 } from "lucide-react";
 
 import {
@@ -56,26 +51,24 @@ export const DropDown = (props: DropDownProps) => {
                 src={props.image}
                 alt={`${props.email} - profile picture`}
               />
-            ) : <AvatarImage
-            src={`https://api.dicebear.com/8.x/bottts-neutral/svg?seed=${props.email}`}
-            alt={`${props.email} - profile picture`}
-          />}
+            ) : (
+              <AvatarImage
+                src={`https://api.dicebear.com/8.x/bottts-neutral/svg?seed=${props.email}`}
+                alt={`${props.email} - profile picture`}
+              />
+            )}
           </Avatar>
-            {props.email}
+          {props.email}
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-          <BookImage  className="mr-2 h-4 w-4" />
+            <BookImage className="mr-2 h-4 w-4" />
             <Link href={"/offer"}>Catalogue</Link>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <History className="mr-2 h-4 w-4"/>
+            <History className="mr-2 h-4 w-4" />
             <Link href={"/offer/allCommands"}>Historique</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Keyboard className="mr-2 h-4 w-4" />
-            <span>Keyboard shortcuts</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
@@ -114,10 +107,6 @@ export const DropDown = (props: DropDownProps) => {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Github className="mr-2 h-4 w-4" />
-          <span>GitHub</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
           <LifeBuoy className="mr-2 h-4 w-4" />
           <span>Support</span>
         </DropdownMenuItem>
@@ -126,8 +115,8 @@ export const DropDown = (props: DropDownProps) => {
           <span>API</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem  onClick={() => SignOutAction()}>
-          <LogOut className="mr-2 h-4 w-4"/>
+        <DropdownMenuItem onClick={() => SignOutAction()}>
+          <LogOut className="mr-2 h-4 w-4" />
           <span>Log out</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
