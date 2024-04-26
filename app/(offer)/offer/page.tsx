@@ -8,7 +8,7 @@ export default async function RoutePage(props: PageParams<{}>) {
   return (
     <Layout className="flex flex-col mt-20">
       <JobsCategories />
-      <div className="flex flex-wrap gap-3 pb-8">
+      <div className="flex flex-wrap justify-center gap-3 pb-8">
         {chocolates.map((chocolate) => (
           <ChocolateCard
             chocolat_id={chocolate.chocolat_id}
