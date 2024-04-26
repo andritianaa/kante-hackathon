@@ -42,6 +42,15 @@ export function Hero() {
           </div>
 
         </div>
+        <div className="h-[75vh] mt-28">
+          <h1 className="text-center text-3xl md:text-4xl font-bold mb-3">Pourquoi choisir nos produits?</h1>
+          <div>
+            <div>
+              <img className="size-40" src="/Pourquoi-manger-du-chocolat-n-est-pas-tres-ecolo.jpg" alt="" />
+              <p>lorem</p>
+            </div>
+          </div>
+        </div>
       </Layout>
     </>
 
