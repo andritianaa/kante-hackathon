@@ -1,13 +1,11 @@
 import type { PageParams } from "@/types/next";
 import { Layout } from "@/components/layout";
-import { JobsCategories } from "@/components/offer/SearchCategory";
 import { ChocolateCard } from "../../../components/offer/ChocolateCard";
 import { chocolates } from "../../../lib/chocolates";
 
 export default async function RoutePage(props: PageParams<{}>) {
   return (
-    <Layout className="flex flex-col mt-20">
-      <JobsCategories />
+    <Layout className="mt-20">
       <div className="flex flex-wrap justify-center gap-3 pb-8">
         {chocolates.map((chocolate) => (
           <ChocolateCard
