@@ -152,7 +152,7 @@ export const CartDropDown = () => {
               Somme TTC : <span className="font-semibold">{sommeTTC} MGA</span>
             </p>
             <Link href="/offer/commande">
-              <Button>Valider Commande</Button>
+              <Button>Valider commande</Button>
             </Link>
           </div>
         </div>
