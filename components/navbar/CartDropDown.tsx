@@ -12,6 +12,7 @@ import { Chocolate } from "../../types/chocolate";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { validerCommande } from "../../actions/cart.action";
+import { substract } from "../../actions/user.action";
 
 export const CartDropDown = () => {
   const [forceRender, setForceRender] = useState(false);
@@ -205,7 +206,9 @@ export const CartDropDown = () => {
               Somme TTC : <span className="font-semibold">{sommeTTC} MGA</span>
             </p>
             <Link href="/offer/commande">
-              <Button onClick={() => validerCommande(ids)}>
+              <Button onClick={() => {
+                substract(sommeTTC)
+                validerCommande(ids)}}>
                 Valider commande
               </Button>
             </Link>

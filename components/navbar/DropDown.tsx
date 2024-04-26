@@ -1,5 +1,5 @@
 "use client";
-import { BookImage, Menu } from "lucide-react";
+import { BookImage, CircleDollarSign, Menu } from "lucide-react";
 
 import {
   Cloud,
@@ -36,12 +36,14 @@ export type DropDownProps = {
   email: string;
   image: string;
   id: string;
+  voucher: number
 };
 
 export const DropDown = (props: DropDownProps) => {
   useEffect(() =>{
     localStorage.setItem("userId", props.id);
   })
+  
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -78,9 +80,9 @@ export const DropDown = (props: DropDownProps) => {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <Users className="mr-2 h-4 w-4" />
-            <span>Team</span>
+          <DropdownMenuItem disabled>
+            <CircleDollarSign className="mr-2 h-4 w-4"/>
+            <span>{props.voucher}</span>
           </DropdownMenuItem>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
