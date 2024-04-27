@@ -3,6 +3,7 @@ import { prisma } from "@/prisma";
 import { notFound } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { ReviewStep } from "./ReviewStep";
+import { Footer } from "../../../../components/home/Footer";
 
 export default async function RoutePage(props: PageParams<{ slug: string }>) {
   const product = await prisma.product.findFirst({
@@ -19,12 +20,14 @@ export default async function RoutePage(props: PageParams<{ slug: string }>) {
       )}
     >
       <div className="flex gap-2 items-center">
-        {product.image ?<img className="size-8" src={product.image} alt={product.name} />: null}
+        {product.image ? <img className="size-8" src={product.image} alt={product.name} /> : null}
         <h1 className="text-lg font-bold">{product?.name}</h1>
       </div>
       <div className="flex-1">
-        <ReviewStep product={product}/>
+        <ReviewStep product={product} />
       </div>
+      <Footer />
+
     </div>
   );
 }

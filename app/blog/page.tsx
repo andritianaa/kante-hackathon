@@ -2,15 +2,15 @@ import { Footer } from "@/components/home/Footer";
 import { NavBar } from "@/components/home/navbar";
 import type { PageParams } from "@/types/next";
 
-export default async function RoutePage(props: PageParams<{  }>) {
-  return (
-    <>
-    <NavBar />
-    
-    <div className="max-w-3xl mt-20 px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
-    <div className="max-w-2xl">
-        
-        {/* <div className="flex justify-between items-center mb-6">
+export default async function RoutePage(props: PageParams<{}>) {
+    return (
+        <>
+            <NavBar />
+
+            <div className="max-w-3xl mt-20 px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
+                <div className="max-w-2xl">
+
+                    {/* <div className="flex justify-between items-center mb-6">
         <div className="flex w-full sm:items-center gap-x-5 sm:gap-x-3">
             <div className="flex-shrink-0">
             <img className="size-12 rounded-full" src="https://images.unsplash.com/photo-1669837401587-f9a4cfe3126e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Image Description" />
@@ -99,59 +99,59 @@ export default async function RoutePage(props: PageParams<{  }>) {
                 
             </div>
             </div> */}
-        {/* </div>
+                    {/* </div>
         </div>
      */}
 
-        
-        <div className="space-y-5 md:space-y-8">
-        <div className="space-y-3">
-            <h2 className="text-2xl font-bold md:text-3xl text-orange-950 dark:text-white">Formation</h2>
 
-            <p className="text-lg text-gray-800 dark:text-neutral-200">Dans notre atelier consacré au chocolat, notre mission est résolument axée sur l'ouverture et la transparence du processus. En offrant un espace où les amateurs de chocolat peuvent découvrir et perfectionner leurs compétences, nous contribuons à promouvoir une culture ouverte et collaborative dans le domaine de la pâtisserie.</p>
-        </div>
+                    <div className="space-y-5 md:space-y-8">
+                        <div className="space-y-3">
+                            <h2 className="text-2xl font-bold md:text-3xl text-orange-950 dark:text-white">Formation</h2>
 
-        <p className="text-lg text-gray-800 dark:text-neutral-200">Nous sommes fiers de participer à la création d'une communauté dynamique où chacun peut s'épanouir et contribuer à l'évolution de cet art délicieux.</p>
+                            <p className="text-lg text-gray-800 dark:text-neutral-200">Dans notre atelier consacré au chocolat, notre mission est résolument axée sur l'ouverture et la transparence du processus. En offrant un espace où les amateurs de chocolat peuvent découvrir et perfectionner leurs compétences, nous contribuons à promouvoir une culture ouverte et collaborative dans le domaine de la pâtisserie.</p>
+                        </div>
 
-        <figure>
-            <img className="w-full object-cover rounded-xl" src="/424614402_837784955025994_2599658033639876716_n.jpg" alt="Image Description" />
-            <figcaption className="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">
-            Détails concernant la formation.
-            </figcaption>
-        </figure>
+                        <p className="text-lg text-gray-800 dark:text-neutral-200">Nous sommes fiers de participer à la création d'une communauté dynamique où chacun peut s'épanouir et contribuer à l'évolution de cet art délicieux.</p>
 
-        <p className="text-lg text-gray-800 dark:text-neutral-200">En encourageant les participants à échanger leurs techniques, leurs expériences et leur amour pour le chocolat, nous avons vu naître une véritable communauté où chacun trouve sa place.Nous croyons fermement que dès le début, il est crucial d'inculquer cette culture d'ouverture pour permettre aux équipes de se développer ensemble et de créer des délices chocolatés qui transcendent les attentes.</p>
+                        <figure>
+                            <img className="w-full object-cover rounded-xl" src="/424614402_837784955025994_2599658033639876716_n.jpg" alt="Image Description" />
+                            <figcaption className="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">
+                                Détails concernant la formation.
+                            </figcaption>
+                        </figure>
 
-        <p className="text-lg text-gray-800 dark:text-neutral-200">C'est dans cet esprit que nous sommes ravis de proposer cette formation, offrant aux amateurs de chocolat de toutes origines une chance de s'immerger dans cet univers délicieux et inspirant.</p>
+                        <p className="text-lg text-gray-800 dark:text-neutral-200">En encourageant les participants à échanger leurs techniques, leurs expériences et leur amour pour le chocolat, nous avons vu naître une véritable communauté où chacun trouve sa place.Nous croyons fermement que dès le début, il est crucial d'inculquer cette culture d'ouverture pour permettre aux équipes de se développer ensemble et de créer des délices chocolatés qui transcendent les attentes.</p>
 
-        <blockquote className="text-center p-4 sm:px-7">
-            <p className="text-xl font-medium text-orange-800 md:text-2xl md:leading-normal xl:text-2xl xl:leading-normal dark:text-neutral-200">
-             Une Symphonie de Saveurs et de Qualité Artisanale.
-            </p>
-            
-        </blockquote>
+                        <p className="text-lg text-gray-800 dark:text-neutral-200">C'est dans cet esprit que nous sommes ravis de proposer cette formation, offrant aux amateurs de chocolat de toutes origines une chance de s'immerger dans cet univers délicieux et inspirant.</p>
 
-        <figure>
-            <img className="w-full object-cover rounded-xl" src="blog.jpg" alt="Image Description" />
-            <figcaption className="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">
-            Nos produits.
-            </figcaption>
-        </figure>
+                        <blockquote className="text-center p-4 sm:px-7">
+                            <p className="text-xl font-medium text-orange-800 md:text-2xl md:leading-normal xl:text-2xl xl:leading-normal dark:text-neutral-200">
+                                Une Symphonie de Saveurs et de Qualité Artisanale.
+                            </p>
 
-        <div className="space-y-3">
-            <h3 className="text-2xl font-semibold text-orange-950 dark:text-white">L'Excellence des Chocolats Bio.</h3>
+                        </blockquote>
 
-            <p className="text-lg text-gray-800 dark:text-neutral-200">Une fois les délicieux chocolats bios sortis de leur processus de fabrication, leur qualité exceptionnelle se révèle dans chaque aspect de leur apparence, leur texture et, bien sûr, leur goût. À travers un mariage méticuleux d'ingrédients biologiques soigneusement sélectionnés, cultivés dans le respect de l'environnement et des normes les plus strictes, ces chocolats incarnent un engagement envers l'excellence et la durabilité.</p>
-        </div>
+                        <figure>
+                            <img className="w-full object-cover rounded-xl" src="blog.jpg" alt="Image Description" />
+                            <figcaption className="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">
+                                Nos produits.
+                            </figcaption>
+                        </figure>
 
-        <ul className="list-disc list-outside space-y-5 ps-5 text-lg text-gray-800 dark:text-neutral-200">
-            <li className="ps-2">Les fèves de cacao, rigoureusement choisies pour leur <span className="text-orange-800 dark:text-orange-700">qualité </span>et leur provenance éthique, sont méticuleusement torréfiées pour libérer leur pleine palette de saveurs.</li>
-            <li className="ps-2">Ensuite,elles sont transformées avec une expertise artisanale, préservant ainsi leur <span className="text-orange-800 dark:text-orange-700">caractère authentique</span> et leur richesse naturelle. Ce processus donne naissance à des chocolats qui séduisent non seulement par leur goût riche et complexe, mais aussi par leur texture soyeuse et leur brillance subtile.</li>
-        </ul>
+                        <div className="space-y-3">
+                            <h3 className="text-2xl font-semibold text-orange-950 dark:text-white">L'Excellence des Chocolats Bio.</h3>
 
-        <p className="text-lg text-gray-800 dark:text-neutral-200">Chaque bouchée offre une expérience sensorielle exquise, où les arômes profonds du cacao se mêlent harmonieusement aux nuances sucrées et fruitées, laissant une empreinte délicieusement durable sur le palais.En savourant ces chocolats bios, on ne fait pas qu'apprécier un plaisir gustatif, mais on participe aussi à une démarche respectueuse de l'environnement.</p>
+                            <p className="text-lg text-gray-800 dark:text-neutral-200">Une fois les délicieux chocolats bios sortis de leur processus de fabrication, leur qualité exceptionnelle se révèle dans chaque aspect de leur apparence, leur texture et, bien sûr, leur goût. À travers un mariage méticuleux d'ingrédients biologiques soigneusement sélectionnés, cultivés dans le respect de l'environnement et des normes les plus strictes, ces chocolats incarnent un engagement envers l'excellence et la durabilité.</p>
+                        </div>
 
-        {/* <div>
+                        <ul className="list-disc list-outside space-y-5 ps-5 text-lg text-gray-800 dark:text-neutral-200">
+                            <li className="ps-2">Les fèves de cacao, rigoureusement choisies pour leur <span className="text-orange-800 dark:text-orange-700">qualité </span>et leur provenance éthique, sont méticuleusement torréfiées pour libérer leur pleine palette de saveurs.</li>
+                            <li className="ps-2">Ensuite,elles sont transformées avec une expertise artisanale, préservant ainsi leur <span className="text-orange-800 dark:text-orange-700">caractère authentique</span> et leur richesse naturelle. Ce processus donne naissance à des chocolats qui séduisent non seulement par leur goût riche et complexe, mais aussi par leur texture soyeuse et leur brillance subtile.</li>
+                        </ul>
+
+                        <p className="text-lg text-gray-800 dark:text-neutral-200">Chaque bouchée offre une expérience sensorielle exquise, où les arômes profonds du cacao se mêlent harmonieusement aux nuances sucrées et fruitées, laissant une empreinte délicieusement durable sur le palais.En savourant ces chocolats bios, on ne fait pas qu'apprécier un plaisir gustatif, mais on participe aussi à une démarche respectueuse de l'environnement.</p>
+
+                        {/* <div>
             <a className="m-1 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200" href="#">
             Plan
             </a>
@@ -165,13 +165,13 @@ export default async function RoutePage(props: PageParams<{  }>) {
             Team
             </a>
         </div> */}
-        </div>
-        
-    </div>
-    </div>
+                    </div>
+
+                </div>
+            </div>
 
 
-{/* 
+            {/* 
     <div className="sticky bottom-6 inset-x-0 text-center">
     <div className="inline-block bg-white shadow-md rounded-full py-3 px-4 dark:bg-neutral-800">
         <div className="flex items-center gap-x-1.5">
@@ -239,11 +239,11 @@ export default async function RoutePage(props: PageParams<{  }>) {
         </div>
     </div> */}
 
-    {/* </div> */}
+            {/* </div> */}
 
-    <Footer />
-  
-    </>
+            <Footer />
+
+        </>
 
     )
 }
