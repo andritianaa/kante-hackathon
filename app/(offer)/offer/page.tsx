@@ -14,7 +14,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { Chocolate } from "../../../types/chocolate";
+import { Chocolate } from "@/types/chocolate";
 
 export default function RoutePage(props: PageParams<{}>) {
 

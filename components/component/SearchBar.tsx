@@ -35,7 +35,7 @@ export function SearchBar({ onSearch }) {
 
   return (
     <Layout key="1" className="">
-      <div className="flex items-center justify-center space-x-4">
+      <div className="flex items-center justify-center mb-2 gap-2">
         
         <Select
           onValueChange={async (v) => {
@@ -112,13 +112,15 @@ export function SearchBar({ onSearch }) {
             </SelectItem>
           </SelectContent>
         </Select>
-        <form className="relative w-full" onSubmit={(e) => {
+        
+      </div>
+      <form className="relative w-full" onSubmit={(e) => {
           e.preventDefault()
             handdleSearch()
         }}>
           <Input
             className="pr-12"
-            placeholder="Search for products, brands, and more..."
+            placeholder="Rechercher ici..."
             type="text"
             value={searchFitlter}
             onChange={(e) => setSearchFitlter(e.target.value)}
@@ -131,11 +133,10 @@ export function SearchBar({ onSearch }) {
             Search
           </Button>
         </form>
-      </div>
       <div className="relative w-full mt-2">
         <Input
           className="pr-12"
-          placeholder="Search for products, brands, and more..."
+          placeholder="Rechercher intelligente......"
           type="text"
           value={AI}
           onChange={(e)=> setAI(e.target.value)}
