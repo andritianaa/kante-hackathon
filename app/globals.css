@@ -84,3 +84,48 @@
     @apply bg-background text-foreground;
   }
 }
+.swiper-slide-shadow {
+  background: none !important;
+}
+
+.swipper-fullscreen .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide {
+  height: inherit !important;
+}
+
+#images{
+  height: calc(100vh - 3.5rem - 4rem);
+    margin-top: 3.5rem;
+}
+
+.mySwip *{
+  box-shadow: none !important;
+}
+
+#globeWrap{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+#globe{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#globeFront{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
