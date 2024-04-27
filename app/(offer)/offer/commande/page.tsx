@@ -8,6 +8,7 @@ import { Layout } from "@/components/layout";
 import { RecipeItem } from "@/components/offer/RecipeItem";
 
 export default function RoutePage(props: PageParams<{  }>) {
+  if (typeof localStorage !== 'undefined') {
 
   const [ids, setIds] = useState<number[]>(
     JSON.parse(localStorage.getItem("cart") || "[]")
@@ -130,4 +131,5 @@ export default function RoutePage(props: PageParams<{  }>) {
       </div>
     </Layout>
   );
+}
 };
