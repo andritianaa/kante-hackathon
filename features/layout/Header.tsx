@@ -16,7 +16,7 @@ export const Header = async () => {
       <Layout className="flex items-center justify-between gap-4 w-full p-2 ">
 
         <Link href="/" className="flex-1">
-          <Image src="/logo.jpg" width={32} height={32} alt="team uk logo" className="rounded"/>
+          <Image src="/logo.jpg" width={42} height={40} alt="team uk logo" className="rounded"/>
         </Link>
 
 
