@@ -11,7 +11,7 @@ import {
   
   export function PaginationProducts() {
     return (
-      <>
+      
       <Pagination>
         <PaginationContent>
           <PaginationItem>
@@ -37,8 +37,8 @@ import {
         </PaginationContent>
       </Pagination>
 
-      <Footer />
-      </>
+      
+     
     )
   }
   
