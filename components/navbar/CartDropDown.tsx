@@ -118,44 +118,52 @@ export const CartDropDown = () => {
               <h5 className="text-lg font-bold leading-none text-gray-900 dark:text-white">
                 Mon panier
               </h5>
-              <LinkIcon className="cursor-pointer" onClick={copyToClipboard} />
+              {ids.length > 0 && (
+                <LinkIcon
+                  className="cursor-pointer"
+                  onClick={copyToClipboard}
+                />
+              )}
             </div>
-            {chocolatesWithOccurences.map((chocolate) => (
-              <CartItem
-                chocolat_id={chocolate.chocolat_id}
-                nom={chocolate.nom}
-                description={chocolate.description}
-                categorie={chocolate.categorie}
-                origine={chocolate.origine}
-                prix={chocolate.prix}
-                image={chocolate.image}
-                occurences={chocolate.occurences}
-              />
-            ))}
-            <div className="flex flex-col gap-4 mt-4">
-              <div className="flex w-full justify-between">
+            {ids.length > 0?
+              (chocolatesWithOccurences.map((chocolate) => (
+                <CartItem
+                  chocolat_id={chocolate.chocolat_id}
+                  nom={chocolate.nom}
+                  description={chocolate.description}
+                  categorie={chocolate.categorie}
+                  origine={chocolate.origine}
+                  prix={chocolate.prix}
+                  image={chocolate.image}
+                  occurences={chocolate.occurences}
+                />
+              ))):(<p className="p-6"> Il n'y a pas de commande </p>)}
+            {ids.length > 0 && (
+              <div className="flex flex-col gap-4 mt-4">
+                <div className="flex w-full justify-between">
+                  <p className="">
+                    Total remise :{" "}
+                    <span className="text-green-500">{remise}%</span>
+                  </p>
+                  <p className="">
+                    Somme : <span className="font-semibold">{somme} MGA</span>
+                  </p>
+                </div>
                 <p className="">
-                  Total remise :{" "}
-                  <span className="text-green-500">{remise}%</span>
+                  Somme TTC :{" "}
+                  <span className="font-semibold">{sommeTTC} MGA</span>
                 </p>
-                <p className="">
-                  Somme : <span className="font-semibold">{somme} MGA</span>
-                </p>
+                <Link href="/offer/commande">
+                  <Button
+                    onClick={() => {
+                      validerCommande(ids);
+                    }}
+                  >
+                    Valider commande
+                  </Button>
+                </Link>
               </div>
-              <p className="">
-                Somme TTC :{" "}
-                <span className="font-semibold">{sommeTTC} MGA</span>
-              </p>
-              <Link href="/offer/commande">
-                <Button
-                  onClick={() => {
-                    validerCommande(ids);
-                  }}
-                >
-                  Valider commande
-                </Button>
-              </Link>
-            </div>
+            )}
           </div>
         </DropdownMenuContent>
       </DropdownMenu>
