@@ -31,7 +31,7 @@ export function Hero() {
                 </div>
                 <div
                   className="w-full sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-amber-700 text-white hover:bg-amber-600 dark:bg-black dark:hover:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none"
-                  
+
                   onClick={() => alert("Vos tokens sont épuisés")}
                 >
                   <Sparkles />
@@ -42,7 +42,7 @@ export function Hero() {
             <div className="lg:col-span-4 mt-10 lg:mt-0">
               <img
                 className="w-full rounded-xl"
-                src="https://images.unsplash.com/photo-1665686376173-ada7a0031a85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&h=700&q=80"
+                src="/logo.jpg"
                 alt="Image Description"
               />
             </div>
