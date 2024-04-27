@@ -2,10 +2,8 @@
 "use server";
 
 import fs from "fs";
-import { z } from "zod"
 import { action, ActionError } from "../lib/safe-action"
 import { currentUser } from "../lib/current-user"
-import { chocolates } from '../lib/chocolates';
 import { addVoucher } from "./user.action";
 const filePath = "./actions/gift.json";
 
