@@ -18,7 +18,7 @@ export function Hero() {
                             <div className="mt-5 lg:mt-8 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
                                 <div className="w-full sm:w-auto">
                                     <label className="sr-only">Search</label>
-                                    <input type="text" id="hero-input" name="hero-input" className="py-3 px-4 block w-full xl:min-w-72 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Enter work email" />
+                                    <input type="text" id="hero-input" name="hero-input" className="py-3 px-4 block w-full xl:min-w-72 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Recherche intelligente" />
                                 </div>
                                 <a className="w-full sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-amber-700 text-white hover:bg-amber-600 dark:bg-black dark:hover:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none" href="#">
                                     <Sparkles />
@@ -37,7 +37,7 @@ export function Hero() {
                         <div className="flex items-end justify-between">
                             <div className="flex-1 text-center lg:text-left">
                                 <h2 className="text-3xl font-bold leading-tight text-amber-900 dark:text-white sm:text-4xl lg:text-5xl">Pourquoi nos produits?</h2>
-                                <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-200 lg:mx-0">Nos produits se distinguent par Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quidem expedita officia ipsa unde accusantium</p>
+                                <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-200 lg:mx-0">Nos produits se démarquent par l'emploi d'ingrédients biologiques, favorisant une qualité accrue tout en respectant l'environnement.</p>
                             </div>
                         </div>
                         <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 lg:mt-16 lg:grid-cols-3 lg:max-w-full">
