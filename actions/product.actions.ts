@@ -1,9 +1,7 @@
 "use server";
 
-import { z } from "zod";
-import { action } from "../lib/safe-action";
 import { chocolates } from "@/lib/chocolates";
-import { Chocolate } from "../types/chocolate";
+import { Chocolate } from "@/types/chocolate";
 
 export type SearchParams = {
     search: string;

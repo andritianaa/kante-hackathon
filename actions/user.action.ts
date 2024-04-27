@@ -2,11 +2,10 @@
 
 import fs from "fs";
 import { currentUser } from "@/lib/current-user";
-import { prisma } from "@/prisma";
 import { ActionError } from "../lib/safe-action";
-const filePathBirth = "./actions/birth.json";
-const filePathGenre = "./actions/genre.json";
-const filePathBond = "./actions/bond.json";
+const filePathBirth = "./actions/objects/birth.json";
+const filePathGenre = "./actions/objects/genre.json";
+const filePathBond = "./actions/objects/bond.json";
 
 interface UserObject {
     userId: string;
