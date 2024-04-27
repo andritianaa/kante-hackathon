@@ -6,15 +6,19 @@ import { z } from "zod"
 import { action, ActionError } from "../lib/safe-action"
 import { currentUser } from "../lib/current-user"
 import { chocolates } from '../lib/chocolates';
+import { addVoucher } from "./user.action";
 const filePath = "./actions/gift.json";
 
 export const createGift = async ({ chocolates, value, userId }) => {
+    addVoucher(value, userId);
+
     const gift = {
         userId: userId,
         chocolates: chocolates,
         value: value,
         giftId: Math.floor(Math.random() * 1000000000) + 1
     }
+
     fs.readFile(filePath, "utf8", (err, data) => {
         const array = JSON.parse(data);
         array.push(gift);
@@ -22,21 +26,50 @@ export const createGift = async ({ chocolates, value, userId }) => {
             filePath,
             JSON.stringify(array, null, 2),
             "utf8",
-            (err) => { }
+            (err) => {
+            }
         )
     });
 }
 
-export const getUserGift = async () => {
-    const user = await currentUser()
-    let response = []
-    if (user) {
+type Chocolate = {
+    occurences: number;
+    chocolat_id: number;
+    nom: string;
+    description: string;
+    categorie: string;
+    origine: string;
+    prix: string;
+    image: string;
+    categorie_id: number;
+    origine_id: number;
+};
 
-        fs.readFile(filePath, "utf8", (err, data) => {
+type UserGift = {
+    userId: string;
+    chocolates: Chocolate[];
+    value: number;
+    giftId: number;
+};
+
+
+export const getUserGift = async (): Promise<UserGift[]> => {
+    const user = await currentUser();
+
+    if (user) {
+        try {
+            const data = await fs.readFileSync(filePath, "utf8");
             const array = JSON.parse(data);
-            array.filter(e => e.userId == user.id)
-            response = array
-        });
-        return response;
-    } else throw new ActionError("User not connected")
-}
+            const response = array.filter(element => element.userId === user.id);
+            console.error("response :", response);
+
+
+            return response || [];
+        } catch (err) {
+            console.error("Error reading file:", err);
+            return [];
+        }
+    } else {
+        throw new ActionError("User not connected");
+    }
+};

@@ -64,7 +64,6 @@ export const CartDropDown = () => {
 
   // const dateAnniversaireClient: string = "2024-05-30"; // Format : YYYY-MM-DD
   const remiseBirth: number = calculerRemise(localStorage.getItem("birth")!);
-  console.log("Remise pour ce client :", remiseBirth * 100, "%");
 
   const [ids, setIds] = useState<number[]>(
     JSON.parse(localStorage.getItem("cart") || "[]")
@@ -75,9 +74,7 @@ export const CartDropDown = () => {
   }, 200);
 
   useEffect(() => {
-    window.addEventListener("storage", () => {
-      console.log("reload");
-    });
+    
     const handleStorageChange = () => {
       const newIds = JSON.parse(localStorage.getItem("cart") || "[]");
       setIds(newIds);
@@ -207,7 +204,7 @@ export const CartDropDown = () => {
             </p>
             <Link href="/offer/commande">
               <Button onClick={() => {
-                substract(sommeTTC)
+                // substract(sommeTTC)
                 validerCommande(ids)}}>
                 Valider commande
               </Button>
