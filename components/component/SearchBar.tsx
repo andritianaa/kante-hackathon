@@ -35,7 +35,7 @@ export function SearchBar({ onSearch }) {
 
   return (
     <Layout key="1" className="">
-      <div className="flex items-center justify-center mb-2 gap-2">
+      <div className="flex items-center w-full justify-center mb-2 gap-2">
         
         <Select
           onValueChange={async (v) => {
@@ -45,7 +45,7 @@ export function SearchBar({ onSearch }) {
             },100)
           }}
         >
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-1/3">
             <SelectValue placeholder="Catégories" />
           </SelectTrigger>
           <SelectContent>
@@ -68,7 +68,7 @@ export function SearchBar({ onSearch }) {
             handdleSearch()
           }}
         >
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-1/3">
             <SelectValue placeholder="Origines" />
           </SelectTrigger>
           <SelectContent>
@@ -90,7 +90,7 @@ export function SearchBar({ onSearch }) {
             },100)
           }}
         >
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-1/3">
             <SelectValue placeholder="Price" />
           </SelectTrigger>
           <SelectContent>
