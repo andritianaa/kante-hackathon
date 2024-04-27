@@ -1,5 +1,11 @@
 "use client";
-import { BookImage, CircleDollarSign, Menu } from "lucide-react";
+import {
+  BookImage,
+  CircleDollarSign,
+  LayoutGrid,
+  LayoutPanelTop,
+  Menu,
+} from "lucide-react";
 
 import { LogOut, History } from "lucide-react";
 
@@ -31,7 +37,7 @@ export const DropDown = (props: DropDownProps) => {
         <DropdownMenuTrigger asChild>
           <Menu />
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56">
+        <DropdownMenuContent className="w-full">
           <DropdownMenuLabel className="flex gap-2 font-normal">
             <Avatar className="w-6 h-6">
               <AvatarFallback>{props.email}</AvatarFallback>
@@ -51,31 +57,45 @@ export const DropDown = (props: DropDownProps) => {
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem>
-              <BookImage className="mr-2 h-4 w-4" />
-              <Link href={"/offer"}>Catalogue</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <History className="mr-2 h-4 w-4" />
-              <Link href={"/offer/allCommands"}>Historique</Link>
-            </DropdownMenuItem>
+            <Link href={"/offer"}>
+              <DropdownMenuItem className="flex items-center gap-3">
+                <BookImage size={21} />
+                Catalogue
+              </DropdownMenuItem>
+            </Link>
+            <Link href={"/offer/allCommands"}>
+              <DropdownMenuItem className="flex items-center gap-3">
+                <History size={21} />
+                Historique
+              </DropdownMenuItem>
+            </Link>
+            <Link href={"/dashboard"}>
+              <DropdownMenuItem className="flex items-center gap-3">
+                <LayoutGrid size={21} />
+                Dashboard
+              </DropdownMenuItem>
+            </Link>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem disabled>
-              <CircleDollarSign className="mr-2 h-4 w-4" />
+            <DropdownMenuItem className="flex items-center gap-3" disabled>
+              <CircleDollarSign size={21} />
               <span>{props.voucher}</span>
             </DropdownMenuItem>
-
-            <DropdownMenuItem>
-              <CircleDollarSign className="mr-2 h-4 w-4" />
-              <Link href={"/gift"}>Cadeaux</Link>
-            </DropdownMenuItem>
+            <Link href={"/gift"}>
+              <DropdownMenuItem className="flex items-center gap-3">
+                <CircleDollarSign size={21} />
+                Cadeaux
+              </DropdownMenuItem>
+            </Link>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={() => SignOutAction()}>
-            <LogOut className="mr-2 h-4 w-4" />
+          <DropdownMenuItem
+            className="flex items-center gap-3"
+            onClick={() => SignOutAction()}
+          >
+            <LogOut size={21} />
             <span>Log out</span>
           </DropdownMenuItem>
         </DropdownMenuContent>
