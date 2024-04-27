@@ -1,10 +1,10 @@
-import React from "react";
-import { Layout } from "../layout";
+"use client"
 import { Sparkles } from "lucide-react";
+import { Layout } from "../layout";
 
 export function Hero() {
   return (
-    <>
+    <Layout>
       <div>
         <div className="max-w-[85rem] mb-20 mt-28 px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
@@ -29,13 +29,13 @@ export function Hero() {
                     placeholder="Recherche intelligente"
                   />
                 </div>
-                <a
+                <div
                   className="w-full sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-amber-700 text-white hover:bg-amber-600 dark:bg-black dark:hover:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none"
-                  href="#"
+                  
                   onClick={() => alert("Vos tokens sont épuisés")}
                 >
                   <Sparkles />
-                </a>
+                </div>
               </div>
             </div>
 
@@ -219,6 +219,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 }
