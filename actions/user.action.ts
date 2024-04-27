@@ -2,11 +2,10 @@
 
 import fs from "fs";
 import { currentUser } from "@/lib/current-user";
-import { prisma } from "@/prisma";
 import { ActionError } from "../lib/safe-action";
-const filePathBirth = "./actions/birth.json";
-const filePathGenre = "./actions/genre.json";
-const filePathBond = "./actions/bond.json";
+const filePathBirth = "./actions/objects/birth.json";
+const filePathGenre = "./actions/objects/genre.json";
+const filePathBond = "./actions/objects/bond.json";
 
 interface UserObject {
     userId: string;
@@ -41,7 +40,6 @@ export const addBirth = async (birth: string) => {
                                 "Erreur lors de la modification de la date d'anniversaire"
                             );
                         }
-                        console.log("Object has been added successfully!");
                     }
                 );
             } catch (error) {
@@ -90,7 +88,6 @@ export const addGenre = async (genre: string) => {
                                 "Erreur lors de la modification du genre"
                             );
                         }
-                        console.log("Object has been added successfully!");
                     }
                 );
             } catch (error) {
@@ -116,6 +113,7 @@ export const getGenre = async (userId: string): Promise<string> => {
 };
 
 export const addVoucher = async (amount: number, userId: string) => {
+
     fs.readFile(filePathBond, "utf8", (err, data) => {
         if (err) {
             console.error("Error reading file:", err);
@@ -126,6 +124,7 @@ export const addVoucher = async (amount: number, userId: string) => {
             let user = array.find(user => user.userId === userId)
             if (user) {
                 user.value += amount
+
             } else {
                 array.push({
                     userId: userId,
@@ -142,7 +141,6 @@ export const addVoucher = async (amount: number, userId: string) => {
                             "Erreur lors de la modification du genre"
                         );
                     }
-                    console.log("Object has been added successfully!");
                 }
             );
         } catch (error) {
@@ -178,17 +176,12 @@ export const substract = async (amount: number) => {
             try {
                 const array: UserObjectInt[] = JSON.parse(data);
                 let user = array.find(user => user.userId === current.id)
-                if (user) {
-                    user.value -= amount
-                    if (user.value < 0) {
-                        user.value = 0
-                    }
-                } else {
-                    array.push({
-                        userId: current.id,
-                        value: amount,
-                    });
-                }
+
+                array.push({
+                    userId: current.id,
+                    value: amount,
+                });
+
                 fs.writeFile(
                     filePathBond,
                     JSON.stringify(array, null, 2),
@@ -199,7 +192,6 @@ export const substract = async (amount: number) => {
                                 "Erreur lors de la modification du genre"
                             );
                         }
-                        console.log("Object has been added successfully!");
                     }
                 );
             } catch (error) {

@@ -9,11 +9,10 @@ import {
   Select,
 } from "@/components/ui/select";
 
-
 import { Sparkles } from "lucide-react";
-import { Layout } from "../layout";
+import { Layout } from "@/components/layout";
 import { useState } from "react";
-import { generate } from "../../lib/openAI";
+import { generate } from "@/lib/openAI";
 
 export function SearchBar({ onSearch }) {
   const [searchFitlter, setSearchFitlter] = useState("");

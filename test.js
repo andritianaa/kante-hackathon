@@ -41,4 +41,3 @@ function calculerRemise(dateAnniversaire) {
 
 const dateAnniversaireClient = "2004-06-03"; // Format : YYYY-MM-DD
 const remise = calculerRemise(dateAnniversaireClient);
-console.log("Remise pour ce client :", remise * 100, "%");

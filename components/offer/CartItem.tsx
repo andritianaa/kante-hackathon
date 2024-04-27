@@ -1,14 +1,9 @@
-"use client";
-
 import { MinusIcon, PlusIcon, Trash2 } from "lucide-react";
 import { Button } from "../ui/button";
-import { useState } from "react";
-import { Chocolate } from "../../types/chocolate";
-import { Input } from "../ui/input";
-import { addToCard, removeAll, removeToCard } from "../../actions/cart.action";
+import { Chocolate } from "@/types/chocolate";
+import { addToCard, removeAll, removeToCard } from "@/actions/cart.action";
 
 export const CartItem = (chocolate: Chocolate) => {
-  const [quantity, setQuantity] = useState<number>(chocolate.occurences || 0);
 
   if (chocolate.occurences)
     return (
@@ -17,7 +12,7 @@ export const CartItem = (chocolate: Chocolate) => {
           <img
             className="w-20 h-20 object-cover rounded-lg"
             src={
-              "https://thumbs.dreamstime.com/b/chocolat-avec-la-poudre-de-cacao-125953683.jpg"
+              chocolate.image
             }
             alt="Neil image"
           />

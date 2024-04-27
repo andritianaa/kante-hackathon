@@ -1,21 +1,14 @@
 "use client";
 import { Link } from "lucide-react";
 import type { PageParams } from "@/types/next";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { ShoppingCart } from "lucide-react";
 import { chocolates } from "@/lib/chocolates";
 import { useEffect, useState } from "react";
 import { Chocolate } from "@/types/chocolate";
-import { CartItem } from "../../../components/offer/CartItem";
-import { Layout } from "../../../components/layout";
+import { CartItem } from "@/components/offer/CartItem";
+import { Layout } from "@/components/layout";
 
 export default function RoutePage(props: PageParams<{  }>) {
 
-  const [forceRender, setForceRender] = useState(false);
   const [ids, setIds] = useState<number[]>(
     JSON.parse(localStorage.getItem("cart") || "[]")
   );
@@ -23,17 +16,6 @@ export default function RoutePage(props: PageParams<{  }>) {
   setInterval(() => {
     setIds(JSON.parse(localStorage.getItem("cart") || "[]"));
   }, 200);
-
-  useEffect(() => {
-    window.addEventListener("storage", () => {
-      console.log("reload");
-    });
-    const handleStorageChange = () => {
-      const newIds = JSON.parse(localStorage.getItem("cart") || "[]");
-      setIds(newIds);
-      setForceRender((prev) => !prev);
-    };
-  }, []);
 
   const idCounts = ids.reduce((acc, id) => {
     acc[id] = (acc[id] || 0) + 1;

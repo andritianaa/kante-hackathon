@@ -16,11 +16,9 @@ export type oneCommandProps = {
 };
 
 export const OneCommand = (props: oneCommandProps) => {
-  console.log(props);
 
   const [forceRender, setForceRender] = useState(false);
   const [ids, setIds] = useState<number[]>(props.ids);
-  console.log(" ids ",ids);
   
   const idCounts = ids.reduce((acc, id) => {
     acc[id] = (acc[id] || 0) + 1;

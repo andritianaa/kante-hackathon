@@ -1,6 +1,4 @@
-import { Contact, Gauge, ImagePlus, Pencil, PocketKnife, Settings, Sparkles } from "lucide-react";
-import { Button } from "../ui/button";
-import { NavBar } from "../home/navbar";
+import { Contact, ImagePlus, Pencil, Settings } from "lucide-react";
 
 export const AsideUser = () => {
   return (
@@ -15,26 +13,18 @@ export const AsideUser = () => {
               </svg>
             </a>
           </div>
-
-
-
           <div className="hs-tooltip [--placement:right] inline-block">
             <button type="button" className="hs-tooltip-toggle w-[3rem] h-[3rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-900">
-
               <Settings />
             </button>
           </div>
-
           <div className="hs-tooltip [--placement:right] inline-block">
             <button type="button" className="hs-tooltip-toggle w-[3rem] h-[3rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-900">
-
               <ImagePlus />
             </button>
           </div>
-
           <div className="hs-tooltip [--placement:right] inline-block">
             <button type="button" className="hs-tooltip-toggle w-[3rem] h-[3rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-900">
-
               <Pencil />
             </button>
           </div>

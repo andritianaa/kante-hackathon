@@ -5,8 +5,6 @@ import { SigninBtn } from "@/features/auth/SigninBtn";
 import { Layout } from "@/components/layout";
 
 export default function RouteError() {
-
-
   return (
     <Layout>
         <Card>

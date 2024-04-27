@@ -3,7 +3,6 @@ import { Inter} from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Providers } from "./providers";
-import { Birth } from './birth';
 
 
 const inter = Inter({subsets: ["latin"]})
@@ -23,7 +22,6 @@ export default function RootLayout({
       <body className={cn(inter.className, ``)}>
         
         <Providers>
-        <Birth/>
           {children}</Providers>
       </body>
     </html>

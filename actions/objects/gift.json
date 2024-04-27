@@ -1,0 +1,63 @@
+[
+  {
+    "userId": "clvgy0uyx0000r012il93ri5a",
+    "chocolates": [],
+    "value": 2800,
+    "giftId": 660428277
+  },
+  {
+    "userId": "clvgy0uyx0000r012il93ri5a",
+    "chocolates": [],
+    "value": 8000,
+    "giftId": 280220281
+  },
+  {
+    "userId": "clvgy0uyx0000r012il93ri5a",
+    "chocolates": [],
+    "value": 41520,
+    "giftId": 874480271
+  },
+  {
+    "userId": "clvgy0uyx0000r012il93ri5a",
+    "chocolates": [
+      {
+        "chocolat_id": 10,
+        "nom": "Truffe Chocolat Noir",
+        "description": "Truffe au chocolat noir riche et onctueuse.",
+        "categorie": "Truffes",
+        "origine": "Equateur",
+        "prix": "35500.00",
+        "image": "https://img.cuisineaz.com/660x660/2020/11/02/i155811-truffes-au-chocolat-copie.jpeg",
+        "categorie_id": 3,
+        "origine_id": 3,
+        "occurences": 3
+      },
+      {
+        "chocolat_id": 3,
+        "nom": "Praline Fondant",
+        "description": "Praline fondant enrobe de chocolat noir.",
+        "categorie": "Pralinés",
+        "origine": "Equateur",
+        "prix": "43200.00",
+        "image": "https://partagestesrecettes.fr/wp-content/uploads/2020/01/fondant-praline-healthy-1024x1024.png",
+        "categorie_id": 2,
+        "origine_id": 3,
+        "occurences": 2
+      },
+      {
+        "chocolat_id": 4,
+        "nom": "Truffe Chocolat Blanc",
+        "description": "Truffe au chocolat blanc avec une touche de vanille.",
+        "categorie": "Truffes",
+        "origine": "Madagascar",
+        "prix": "40000.00",
+        "image": "https://sf2.viepratique.fr/wp-content/uploads/sites/2/2013/12/shutterstock_69072232.jpg",
+        "categorie_id": 3,
+        "origine_id": 4,
+        "occurences": 3
+      }
+    ],
+    "value": 0,
+    "giftId": 279133782
+  }
+]
