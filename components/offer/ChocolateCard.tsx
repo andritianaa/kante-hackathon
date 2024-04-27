@@ -1,9 +1,8 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Chocolate } from "../../types/chocolate";
+import { Chocolate } from "@/types/chocolate";
 import { HandCoins, Info } from "lucide-react";
-import { addToCard } from "../../actions/cart.action";
+import { addToCard } from "@/actions/cart.action";
 import Link from "next/link";
 
 export function ChocolateCard(chocolate: Chocolate) {

@@ -2,103 +2,23 @@ import { Facebook, Instagram, Twitter } from "lucide-react"
 
 export const Footer = () => {
     return (
-
-        // <footer className="mt-auto bg-gray-900 w-full dark:bg-neutral-950">
-        //     <div className="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 lg:pt-20 mx-auto">
-        //         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-        //             <div className="col-span-full lg:col-span-1">
-        //                 <a className="flex-none text-xl font-semibold text-white" href="#" aria-label="Brand">Brand</a>
-        //             </div>
-
-        //             <div className="col-span-1">
-        //                 <h4 className="font-semibold text-gray-100">Product</h4>
-
-        //                 <div className="mt-3 grid space-y-3">
-        //                     <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200" href="#">Pricing</a></p>
-        //                     <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200" href="#">Changelog</a></p>
-        //                     <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200" href="#">Docs</a></p>
-        //                 </div>
-        //             </div>
-
-        //             <div className="col-span-1">
-        //                 <h4 className="font-semibold text-gray-100">Company</h4>
-
-        //                 <div className="mt-3 grid space-y-3">
-        //                     <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200" href="#">About us</a></p>
-        //                     <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200" href="#">Blog</a></p>
-        //                     <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200" href="#">Careers</a> <span className="inline ms-1 text-xs bg-blue-700 text-white py-1 px-2 rounded-lg">We're hiring</span></p>
-        //                     <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200" href="#">Customers</a></p>
-        //                 </div>
-        //             </div>
-
-        //             <div className="col-span-2">
-        //                 <h4 className="font-semibold text-gray-100">Stay up to date</h4>
-
-        //                 <form>
-        //                     <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-3 bg-white rounded-lg p-2 dark:bg-neutral-900">
-        //                         <div className="w-full">
-        //                             <label className="sr-only">Search</label>
-        //                             <input type="text" id="hero-input" name="hero-input" className="py-3 px-4 block w-full border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Enter your email" />
-        //                         </div>
-        //                         <a className="w-full sm:w-auto whitespace-nowrap p-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
-        //                             Subscribe
-        //                         </a>
-        //                     </div>
-        //                     <p className="mt-3 text-sm text-gray-400">
-        //                         New UI kits or big discounts. Never spam.
-        //                     </p>
-        //                 </form>
-        //             </div>
-        //         </div>
-
-        //         <div className="mt-5 sm:mt-12 grid gap-y-2 sm:gap-y-0 sm:flex sm:justify-between sm:items-center">
-        //             <div className="flex justify-between items-center">
-        //                 <p className="text-sm text-gray-400 dark:text-neutral-400">© 2000/2021 ChocoClic tous droits réservés. Utilisation des images et des textes interdits sans autorisations</p>
-        //             </div>
-
-        //             <div>
-        //                 <a className="size-10 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-white hover:bg-white/10 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:ring-1 focus:ring-gray-600" href="#">
-        //                     <Facebook />
-        //                 </a>
-        //                 <a className="size-10 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-white hover:bg-white/10 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:ring-1 focus:ring-gray-600" href="#">
-        //                     <Instagram />
-        //                 </a>
-        //                 <a className="size-10 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-white hover:bg-white/10 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:ring-1 focus:ring-gray-600" href="#">
-        //                     <Twitter />
-        //                 </a>
-
-        //             </div>
-        //         </div>
-        //     </div>
-        // </footer>
         <section className="py-10 bg-orange-950 dark:bg-black">
             <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                 <div className="text-center xl:flex xl:items-center xl:justify-between xl:text-left">
                     <div className="xl:flex xl:items-center xl:justify-start">
                         <img className="w-16 mx-auto h-16" src="/logo.jpg" alt="" />
-
-                        <p className="mt-5 text-sm text-white xl:ml-6 xl:mt-0">© 2000/2024 EdenaChocolaterie tous droits réservés.</p>
+                        <p className="mt-5 text-sm text-white xl:ml-6 xl:mt-0">© 2000/2024 EdeniaChocolaterie tous droits réservés.</p>
                     </div>
-
                     <div className="items-center mt-8 xl:mt-0 xl:flex xl:justify-end xl:space-x-8">
                         <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 xl:justify-end">
                             <li>
                                 <a href="/blog" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> A propos </a>
                             </li>
-
                             <li>
                                 <a href="/offer" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Nos produits </a>
                             </li>
-
-                            {/* <li>
-                                <a href="#" title="" className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Contacts </a>
-                            </li> */}
-
-
                         </ul>
-
                         <div className="w-full h-px mt-8 mb-5 xl:w-px xl:m-0 xl:h-6 bg-gray-50/20"></div>
-
                         <ul className="flex items-center justify-center space-x-8 xl:justify-end">
                             <li>
                                 <a href="https://twitter.com/zlatanrene/status/1241623461749035009" title="" className="block text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80">
@@ -109,7 +29,6 @@ export const Footer = () => {
                                     </svg>
                                 </a>
                             </li>
-
                             <li>
                                 <a href="https://web.facebook.com/p/Edenia-Chocolaterie-100063834920816/?_rdc=1&_rdr" title="" className="block text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80">
                                     <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -117,7 +36,6 @@ export const Footer = () => {
                                     </svg>
                                 </a>
                             </li>
-
                             <li>
                                 <a href="https://www.instagram.com/edeniachocolaterie?igsh=MW0wazY0c3o3eXRuMg==" title="" className="block text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80">
                                     <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -134,6 +52,5 @@ export const Footer = () => {
                 </div>
             </div>
         </section>
-
     )
 }

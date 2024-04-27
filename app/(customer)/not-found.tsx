@@ -1,13 +1,9 @@
-"use client";
-
 import {
   Card,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { SigninBtn } from "@/features/auth/SigninBtn";
 import { Layout } from "@/components/layout";
 
 export default function RouteError() {

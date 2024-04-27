@@ -2,9 +2,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { LoggedInDropDown } from "./LoggedInDropDown";
 import { Session } from "next-auth";
-
-
-
 export const LoggedInButton = async (session: Session | null) => {
 
   if (!session?.user) {
@@ -26,8 +23,3 @@ export const LoggedInButton = async (session: Session | null) => {
     </LoggedInDropDown>
   );
 };
-
-
-export type LoggedInButtonProps = {
-  
-}
