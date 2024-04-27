@@ -1,3 +1,4 @@
+import { Footer } from "@/components/home/Footer"
 import {
     Pagination,
     PaginationContent,
@@ -10,6 +11,7 @@ import {
   
   export function PaginationProducts() {
     return (
+      
       <Pagination>
         <PaginationContent>
           <PaginationItem>
@@ -34,6 +36,9 @@ import {
           </PaginationItem>
         </PaginationContent>
       </Pagination>
+
+      
+     
     )
   }
   
