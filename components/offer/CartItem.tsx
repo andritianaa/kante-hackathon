@@ -17,7 +17,7 @@ export const CartItem = (chocolate: Chocolate) => {
           <img
             className="w-20 h-20 object-cover rounded-lg"
             src={
-              "https://thumbs.dreamstime.com/b/chocolat-avec-la-poudre-de-cacao-125953683.jpg"
+              chocolate.image
             }
             alt="Neil image"
           />
