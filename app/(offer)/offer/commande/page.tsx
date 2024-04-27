@@ -26,9 +26,7 @@ export default function RoutePage(props: PageParams<{  }>) {
   }, 200);
 
   useEffect(() => {
-    window.addEventListener("storage", () => {
-      console.log("reload");
-    });
+    
     const handleStorageChange = () => {
       const newIds = JSON.parse(localStorage.getItem("cart") || "[]");
       setIds(newIds);

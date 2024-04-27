@@ -1,5 +1,4 @@
 export const addToCard = (id: number) => {
-    console.log("here");
 
     let cart: number[] = [];
 
