@@ -64,23 +64,12 @@ export default function RoutePage(props: PageParams<{}>) {
               <PaginationPrevious onClick={handdlePrev} />
             </PaginationItem>
             <PaginationItem className="cursor-pointer">
-              {page == 1 ? (
                 <PaginationLink onClick={()=> handdlePagination(1)}  isActive>
                   1
                 </PaginationLink>
-              ) : (
-                <PaginationLink onClick={()=> handdlePagination(1)} >1</PaginationLink>
-              )}
+              
             </PaginationItem>
-            <PaginationItem className="cursor-pointer">
-              {page == 2 ? (
-                <PaginationLink onClick={()=> handdlePagination(2)}  isActive>
-                  2
-                </PaginationLink>
-              ) : (
-                <PaginationLink onClick={()=> handdlePagination(2)} >2</PaginationLink>
-              )}
-            </PaginationItem>
+            
             <PaginationItem className="cursor-pointer">
               <PaginationNext onClick={handdleNext} />
             </PaginationItem>

@@ -13,6 +13,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Controls, Player } from "@lottiefiles/react-lottie-player";
 
 export default async function RoutePage(props: PageParams<{}>) {
   const gifts = await getUserGift();
@@ -53,6 +54,7 @@ export default async function RoutePage(props: PageParams<{}>) {
             </TableFooter>
           </Table>
         ))}
+        
       </Layout>
     </>
   );

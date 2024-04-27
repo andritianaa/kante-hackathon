@@ -12,7 +12,6 @@ import {
 import { Sparkles } from "lucide-react";
 import { Layout } from "@/components/layout";
 import { useState } from "react";
-import { generate } from "@/lib/openAI";
 
 export function SearchBar({ onSearch }) {
   const [searchFitlter, setSearchFitlter] = useState("");
@@ -20,6 +19,11 @@ export function SearchBar({ onSearch }) {
   const [categoryFitlter, setCategoryFitlter] = useState("");
   const [originFitlter, setOriginFitlter] = useState("");
   const [priceFitlter, setPriceFitlter] = useState("");
+  const generate = ()=>{
+    
+    alert("Vos tokens sont épuisés")
+    
+  }
   const handdleSearch = () => {
     onSearch({
       search: searchFitlter,
@@ -140,7 +144,7 @@ export function SearchBar({ onSearch }) {
           className="absolute right-2 top-1/2 -translate-y-1/2"
           type="submit"
           variant={"link"}
-          onClick={()=> generate(AI)}
+          onClick={()=> generate()}
         >
           <Sparkles className="opacity-50" />
         </Button>
