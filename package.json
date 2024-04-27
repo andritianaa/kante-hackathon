@@ -68,7 +68,6 @@
     "react-audio-voice-recorder": "^2.2.0",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18",
-    "react-dual-range-slider": "^1.0.4",
     "react-hook-form": "^7.51.3",
     "react-resizable-panels": "^2.0.17",
     "react-twc": "^1.4.1",
