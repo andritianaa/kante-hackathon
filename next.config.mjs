@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = { trustedHosts: [], };
+const nextConfig = {
+    trustHost: true,
+};
 
 export default nextConfig;
-
