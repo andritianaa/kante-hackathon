@@ -7,7 +7,7 @@ export const Footer = () => {
                 <div className="text-center xl:flex xl:items-center xl:justify-between xl:text-left">
                     <div className="xl:flex xl:items-center xl:justify-start">
                         <img className="w-16 mx-auto h-16" src="/logo.jpg" alt="" />
-                        <p className="mt-5 text-sm text-white xl:ml-6 xl:mt-0">© 2000/2024 EdenaChocolaterie tous droits réservés.</p>
+                        <p className="mt-5 text-sm text-white xl:ml-6 xl:mt-0">© 2000/2024 EdeniaChocolaterie tous droits réservés.</p>
                     </div>
                     <div className="items-center mt-8 xl:mt-0 xl:flex xl:justify-end xl:space-x-8">
                         <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 xl:justify-end">
