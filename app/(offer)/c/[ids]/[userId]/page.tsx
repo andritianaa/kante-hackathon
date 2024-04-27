@@ -1,17 +1,14 @@
 "use client";
 import type { PageParams } from "@/types/next";
-import { Link as LinkIcon } from "lucide-react";
 import Link from "next/link";
 
 import { chocolates } from "@/lib/chocolates";
 import { useEffect, useState } from "react";
 import { Chocolate } from "@/types/chocolate";
-import { CartItem } from "@/components/offer/CartItem";
 import { Layout } from "@/components/layout";
-import { Button } from "../../../../../components/ui/button";
-import { addVoucher, substract } from "../../../../../actions/user.action";
-import { RecipeItem } from "../../../../../components/offer/RecipeItem";
-import { createGift } from "../../../../../actions/gift.action";
+import { Button } from "@/components/ui/button";
+import { RecipeItem } from "@/components/offer/RecipeItem";
+import { createGift } from "@/actions/gift.action";
 
 export default function RoutePage(
   props: PageParams<{ ids: string; userId: string }>
@@ -157,7 +154,6 @@ export default function RoutePage(
               href="/offer"
               onClick={() => {
                 handdleCommandWithVoucher();
-                // substract(sommeTTC);
               }}
             >
               <Button>Commander</Button>

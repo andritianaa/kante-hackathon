@@ -5,8 +5,8 @@ import Link from "next/link";
 import { DropDown } from "@/components/navbar/DropDown";
 import { baseAuth } from "@/lib/auth";
 import { SigninBtn } from "../auth/SigninBtn";
-import { CartDropDown } from "../../components/navbar/CartDropDown";
-import { getVoucher } from "../../actions/user.action";
+import { CartDropDown } from "@/components/navbar/CartDropDown";
+import { getVoucher } from "@/actions/user.action";
 export const Header = async () => {
   const session = await baseAuth();
   const voucher = await getVoucher(session?.user?.id || "")
@@ -18,9 +18,6 @@ export const Header = async () => {
         <Link href="/" className="flex-1">
           <Image src="/logo.jpg" width={42} height={40} alt="team uk logo" className="rounded"/>
         </Link>
-
-
-        {/* <div className=" justify-between items-center flex max-md:hidden"><MenuNavigation /></div> */}
         <div className="flex items-center gap-3 m-3">
           <div className="flex items-center">{session?.user && <CartDropDown />}</div>
           <div className=" items-center gap-2 flex-1 justify-end flex md:hidden">
