@@ -21,7 +21,7 @@ export default function RoutePage(props: PageParams<{ id: string }>) {
             className="w-full h-[300px] object-cover"
             height="300"
             src={
-              "https://thumbs.dreamstime.com/b/chocolat-avec-la-poudre-de-cacao-125953683.jpg"
+              chocolat.image
             }
             style={{
               // aspectRatio: "500/300",
